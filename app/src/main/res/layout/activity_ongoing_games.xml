@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/backgroundwithclouds"
     android:orientation="vertical"
     tools:context=".OngoingGamesActivity">
 
@@ -23,8 +23,8 @@
         android:text="Ongoing Games"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="32dp" />
+        android:textSize="32dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:src="@drawable/sanfrancisco"
@@ -47,6 +47,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="bottom|right"
-        android:paddingTop="80dp"/>
+        android:paddingTop="88dp"/>
 
 </LinearLayout>
