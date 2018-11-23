@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CustomizeRequestActivity" android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        <activity android:name=".PlayGameActivity" android:windowSoftInputMode="stateVisible|adjustPan"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
