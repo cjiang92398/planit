@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
+import android.os.Handler;
 
 public class PlayGameActivity extends AppCompatActivity {
 
-    private boolean wonGame = true;
+    private boolean wonGame = false;
 
     // @ johnson, you'll probably use an activity for playing the actual game
     // adding my code here for showing the dialog :)
@@ -22,12 +25,48 @@ public class PlayGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_play_game);
         //GamePlayerView player = (GamePlayerView) findViewById(R.id.gamePlayerView);
 
-        if (wonGame) {
-            showYouWonDialog();
-        }
+        updateReadySetGoText();
+
+        // now popup the keyboard and allow for user to input ideas.
+//        acceptPlayerIdeas();
+
+//        if (wonGame) {
+//            showYouWonDialog();
+//        }
+    }
+
+    public void acceptPlayerIdeas() {
+        // PROBABLY IN A NEW XML VIEW and perhaps new activity:
+            // add ticking timer at top
+            // attach balloons to the penguin things
+            // include space for edit text
+        Intent intent = new Intent(this, PlayGameActivity2.class);
+        startActivity(intent);
+        setContentView(R.layout.activity_play_game_2);
+    }
+
+    public void updateReadySetGoText() {
+        final TextView readySetGoText = (TextView) findViewById(R.id.readySetGo);
+        Handler h = new Handler();
+        h.postDelayed(new Runnable() {
+            public void run() {
+                readySetGoText.setText("SET?");
+            }
+        }, 2000);
+        h.postDelayed(new Runnable() {
+            public void run() {
+                readySetGoText.setText("GO!");
+            }
+        }, 4000);
+        h.postDelayed(new Runnable() {
+            public void run() {
+                readySetGoText.setVisibility(View.INVISIBLE);
+            }
+        }, 5000);
     }
 
     public void showYouWonDialog() {
