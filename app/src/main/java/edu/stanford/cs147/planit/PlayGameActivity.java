@@ -29,27 +29,6 @@ public class PlayGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_game);
         //GamePlayerView player = (GamePlayerView) findViewById(R.id.gamePlayerView);
 
-        updateReadySetGoText();
-
-        // now popup the keyboard and allow for user to input ideas.
-//        acceptPlayerIdeas();
-
-//        if (wonGame) {
-//            showYouWonDialog();
-//        }
-    }
-
-    public void acceptPlayerIdeas() {
-        // PROBABLY IN A NEW XML VIEW and perhaps new activity:
-            // add ticking timer at top
-            // attach balloons to the penguin things
-            // include space for edit text
-        Intent intent = new Intent(this, PlayGameActivity2.class);
-        startActivity(intent);
-        setContentView(R.layout.activity_play_game_2);
-    }
-
-    public void updateReadySetGoText() {
         final TextView readySetGoText = (TextView) findViewById(R.id.readySetGo);
         Handler h = new Handler();
         h.postDelayed(new Runnable() {
@@ -65,8 +44,15 @@ public class PlayGameActivity extends AppCompatActivity {
         h.postDelayed(new Runnable() {
             public void run() {
                 readySetGoText.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(PlayGameActivity.this, PlayGameActivity2.class);
+                startActivity(intent);
+                finish();
             }
         }, 5000);
+
+//        if (wonGame) {
+//            showYouWonDialog();
+//        }
     }
 
     public void showYouWonDialog() {

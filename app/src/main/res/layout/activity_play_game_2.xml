@@ -6,37 +6,47 @@
     android:layout_height="match_parent"
     android:background="@drawable/playgamebackground"
     android:orientation="vertical"
-    tools:context=".PlayGameActivity2">
+    tools:context=".PlayGameActivity2"
+    android:id="@+id/background">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="130dp"
+        android:text="1:00"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout">
+        android:fontFamily="@font/quicksand_bold"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:background="@drawable/timershape"
+        android:layout_marginTop="20dp"
+        />
+
+
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20px"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="50dp"
             android:src="@drawable/greenpenguin" />
 
         <ImageView
+            android:id="@+id/coralpenguin"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20px"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="150dp"
             android:src="@drawable/coralpenguin" />
 
         <ImageView
+            android:id="@+id/bluepenguin"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_margin="20px"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="270dp"
             android:src="@drawable/bluepenguin" />
-    </LinearLayout>
 
     <EditText
         android:id="@+id/ideaInput"
@@ -44,20 +54,26 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/bluepenguin"
         android:layout_gravity="center"
-        android:layout_marginTop="120dp"
+        android:gravity="bottom"
+
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:paddingBottom="5dp"
-        android:background="@android:color/darker_gray"
-        android:inputType="text"
+
+        android:background="@drawable/inputtextshape"
         android:fontFamily="@font/quicksand"
         android:hint="Type your idea..."
+        android:singleLine="true"
+        android:inputType="textNoSuggestions|textVisiblePassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+
+        android:imeOptions="actionDone"/>
 
 </RelativeLayout>
 
