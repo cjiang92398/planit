@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DestinationSetting">
+
+    <ImageView
+        android:src="@drawable/destinationsetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <View
+        android:id="@+id/horizontalMargin1"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        />
+
+    <EditText
+        android:id="@+id/destination"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:hint="e.g. Tokyo"
+        android:inputType="text"
+        android:layout_toRightOf="@id/horizontalMargin1"
+        android:layout_below="@id/verticalMargin1"
+        android:textSize="12dp"
+        android:background="@null"
+        android:textColor="#ffffff"
+        />
+
+    <View
+        android:id="@+id/horizontalMargin2"
+        android:layout_width="215dp"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin2"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        />
+
+    <Button
+        android:id="@+id/selectAll"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_toRightOf="@id/horizontalMargin2"
+        android:layout_below="@id/verticalMargin2"
+        android:background="@android:color/transparent"
+        />
+
+    <View
+        android:id="@+id/horizontalMargin3"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin3"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        />
+
+    <ImageView
+        android:id="@+id/johnDoeCheck"
+        android:src="@drawable/checkmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin3"
+        />
+
+    <Button
+        android:id="@+id/johnDoeButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin3"
+        android:background="@android:color/transparent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin4"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        />
+
+    <ImageView
+        android:id="@+id/sarahRogersCheck"
+        android:src="@drawable/checkmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin4"
+        />
+
+    <Button
+        android:id="@+id/sarahRogersButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin4"
+        android:background="@android:color/transparent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin5"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        />
+
+    <ImageView
+        android:id="@+id/elizaSmithCheck"
+        android:src="@drawable/checkmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin5"
+        />
+
+    <Button
+        android:id="@+id/elizaSmithButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/horizontalMargin3"
+        android:layout_below="@id/verticalMargin5"
+        android:background="@android:color/transparent"
+        />
+
+</RelativeLayout>

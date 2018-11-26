@@ -43,6 +43,7 @@
         android:layout_below="@id/verticalMargin1"
         android:textSize="12dp"
         android:background="@null"
+        android:textColor="#ffffff"
         />
 
     <View
@@ -62,6 +63,7 @@
         android:layout_below="@id/verticalMargin2"
         android:textSize="12dp"
         android:background="@null"
+        android:textColor="#ffffff"
         />
 
     <View
