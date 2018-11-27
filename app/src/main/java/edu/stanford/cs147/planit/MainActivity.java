@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_game);
-        Intent intent = new Intent(this, PlayGameActivity2.class);
+        Intent intent = new Intent(this, PlayGameActivity.class);
         startActivity(intent);
     }
 }
