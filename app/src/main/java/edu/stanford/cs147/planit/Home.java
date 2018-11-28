@@ -131,6 +131,15 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //handle games button click
+        //transports user to ongoing games page
+        final Button gamesButton = findViewById(R.id.games);
+        gamesButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(Home.this, OngoingGamesActivity.class));
+            }
+        });
+
         if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
         if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
 

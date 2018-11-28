@@ -8,12 +8,15 @@ public class OngoingGamesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        System.out.println("ongoing games");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ongoing_games);
     }
 
     public void playGame(View view) {
-        // go to PlayGameActivity once Johnson finishes
+        setContentView(R.layout.activity_play_game);
     }
 
     public void goHome(View view) {

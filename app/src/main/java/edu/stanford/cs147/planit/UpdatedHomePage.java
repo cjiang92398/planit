@@ -214,6 +214,15 @@ public class UpdatedHomePage extends AppCompatActivity {
             destination3TextView.setText(newDestinationsList.get(1));
         }
 
+        //handle games button click
+        //transports user to ongoing games page
+        final Button gamesButton = findViewById(R.id.games);
+        gamesButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(UpdatedHomePage.this, OngoingGamesActivity.class));
+            }
+        });
+
         if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
         if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
 

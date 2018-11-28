@@ -273,4 +273,25 @@
         android:background="@android:color/transparent"
         />
 
+    <View
+        android:id="@+id/verticalMargin5"
+        android:layout_width="match_parent"
+        android:layout_height="465dp"
+        />
+
+    <View
+        android:id="@+id/horizontalMargin5"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        />
+
+    <Button
+        android:id="@+id/games"
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:layout_toRightOf="@id/horizontalMargin5"
+        android:layout_below="@id/verticalMargin5"
+        android:background="@android:color/transparent"
+        />
+
 </RelativeLayout>

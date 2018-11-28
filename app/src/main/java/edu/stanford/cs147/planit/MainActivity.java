@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -46,6 +45,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
