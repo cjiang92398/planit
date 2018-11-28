@@ -44,6 +44,8 @@
         android:textSize="12dp"
         android:background="@null"
         android:textColor="#ffffff"
+        android:fontFamily="@font/sniglet"
+        android:textColorHint="#e7e7e7"
         />
 
     <View
@@ -64,6 +66,8 @@
         android:textSize="12dp"
         android:background="@null"
         android:textColor="#ffffff"
+        android:fontFamily="@font/sniglet"
+        android:textColorHint="#e7e7e7"
         />
 
     <View
