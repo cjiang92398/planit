@@ -38,4 +38,12 @@ public class CheckinGameActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+    public void goHome(View view) {
+        if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+            startActivity(new Intent(CheckinGameActivity.this, Home.class));
+        } else {
+            startActivity(new Intent(CheckinGameActivity.this, UpdatedHomePage.class));
+        }
+    }
 }

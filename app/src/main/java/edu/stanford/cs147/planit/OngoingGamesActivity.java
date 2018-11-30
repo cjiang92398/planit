@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 public class OngoingGamesActivity extends AppCompatActivity {
 
@@ -19,6 +20,10 @@ public class OngoingGamesActivity extends AppCompatActivity {
     }
 
     public void goHome(View view) {
-        // go to GoHomeActivity once Lisa finishes
+        if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+            startActivity(new Intent(OngoingGamesActivity.this, Home.class));
+        } else {
+            startActivity(new Intent(OngoingGamesActivity.this, UpdatedHomePage.class));
+        }
     }
 }

@@ -109,7 +109,8 @@ public class DestinationSetting extends AppCompatActivity {
                     toast.show();
                 } else {
                     UpdatedHomePage.setDestination(destination);
-                    startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
+                    startActivity(new Intent(DestinationSetting.this, CustomizeRequestActivity.class));
+                    //startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
                 }
 
             }

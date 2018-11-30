@@ -24,7 +24,7 @@ public class CustomizeRequestActivity extends AppCompatActivity {
 
     public void send(View view) {
         // go to GoHomeActivity once Lisa finishes
-        Intent intent = new Intent(this, MainActivity.class); // main activity for now, replace with home
+        Intent intent = new Intent(this, UpdatedHomePage.class); // main activity for now, replace with home
         startActivity(intent);
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast,

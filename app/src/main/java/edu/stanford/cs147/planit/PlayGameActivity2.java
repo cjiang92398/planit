@@ -175,7 +175,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                 new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), UpdatedHomePage.class);
                         startActivity(intent);
                         // start activity to go home, once Lisa finishes
                     }
