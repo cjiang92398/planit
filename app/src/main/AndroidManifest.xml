@@ -27,7 +27,7 @@
             android:windowSoftInputMode="stateAlwaysVisible" />
         <activity android:name=".PopBalloonActivity" />
         <activity android:name=".OngoingGamesActivity" />
-
+        <activity android:name=".CheckinGameActivity"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

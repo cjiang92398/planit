@@ -40,7 +40,7 @@ public class PlayGameActivity extends AppCompatActivity {
             public void run() {
                 readySetGoText.setText("GO!");
             }
-        }, 4000);
+        }, 3500);
         h.postDelayed(new Runnable() {
             public void run() {
                 readySetGoText.setVisibility(View.INVISIBLE);
@@ -48,34 +48,6 @@ public class PlayGameActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 5000);
-
-//        if (wonGame) {
-//            showYouWonDialog();
-//        }
-    }
-
-    public void showYouWonDialog() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setMessage("YOU WON!");
-        dialogBuilder.setOnCancelListener(
-            new DialogInterface.OnCancelListener() {
-                @Override
-                public void onCancel(DialogInterface dialog) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    // start activity to go home, once Lisa finishes
-                    }
-            }
-        );
-        AlertDialog dialog = dialogBuilder.show();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
-        Typeface typeface = ResourcesCompat.getFont(getApplicationContext(), R.font.sniglet);
-        textView.setTypeface(typeface, Typeface.BOLD);
-        textView.setTextSize(64);
-        textView.setTextColor(Color.WHITE);
-        textView.setGravity(Gravity.CENTER);
-        textView.setShadowLayer(4, 4, 4, Color.BLACK);
+        }, 4500);
     }
 }
