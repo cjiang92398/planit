@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class DestinationSetting extends AppCompatActivity {
 
-    private static ArrayList<String> newDestinationsList;
+    public static ArrayList<String> newDestinationsList;
     public static void setDestinationsList(ArrayList<String> destinationsList) {
         newDestinationsList = destinationsList;
     }
@@ -107,11 +107,34 @@ public class DestinationSetting extends AppCompatActivity {
                     toast.setDuration(Toast.LENGTH_SHORT);
                     toast.setView(layout);
                     toast.show();
+                } else if (johnDoeCheck.getVisibility() == View.INVISIBLE &&
+                    sarahRogersCheck.getVisibility() == View.INVISIBLE &&
+                        elizaSmithCheck.getVisibility() == View.INVISIBLE) {
+                    text.setText("Please invite a friend.");
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(layout);
+                    toast.show();
                 } else {
+                    newDestinationsList.add(0, destination);
                     UpdatedHomePage.setDestination(destination);
-                    startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
+                    startActivity(new Intent(DestinationSetting.this, CustomizeRequestActivity.class));
                 }
 
+            }
+        });
+
+
+
+        //handle return home button click
+        final Button returnHomeButton = findViewById(R.id.returnHome);
+        returnHomeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+                    startActivity(new Intent(DestinationSetting.this, Home.class));
+                } else {
+                    startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
+                }
             }
         });
 

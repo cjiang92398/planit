@@ -41,8 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //start activity
                 else {
+                    //startActivity(new Intent(MainActivity.this, FinalPlan.class));
                     startActivity(new Intent(MainActivity.this, Home.class));
                 }
+
+                //start app with 2 pre-added locations
+                Home.destinationsList.add("Paris");
+                Home.destinationsList.add("Tokyo");
             }
         });
     }

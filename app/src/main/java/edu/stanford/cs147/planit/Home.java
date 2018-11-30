@@ -12,8 +12,11 @@ import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
+    public static ArrayList<String> destinationsList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -116,12 +119,12 @@ public class Home extends AppCompatActivity {
         addGameButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 //save homepage state
-                ArrayList<String> destinationsList = new ArrayList<>();
+                destinationsList.clear();
                 if(!destination1TextView.getText().toString().equals("")) {
                     destinationsList.add(destination1TextView.getText().toString());
                 }
                 if(!destination2TextView.getText().toString().equals("")) {
-                    destinationsList. add(destination2TextView.getText().toString());
+                    destinationsList.add(destination2TextView.getText().toString());
                 }
                 UpdatedHomePage.setDestinationsList(destinationsList);
                 DestinationSetting.setDestinationsList(destinationsList);
@@ -136,9 +139,40 @@ public class Home extends AppCompatActivity {
         final Button gamesButton = findViewById(R.id.games);
         gamesButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                //save homepage state
+                destinationsList.clear();
+                if(!destination1TextView.getText().toString().equals("")) {
+                    destinationsList.add(destination1TextView.getText().toString());
+                }
+                if(!destination2TextView.getText().toString().equals("")) {
+                    destinationsList.add(destination2TextView.getText().toString());
+                }
+
                 startActivity(new Intent(Home.this, OngoingGamesActivity.class));
             }
         });
+
+        if (destinationsList.size() == 0) {
+            //0 items in last home page state
+            destination1TextView.setText("");
+            destination1Button.setVisibility(View.GONE);
+            destination1TextView.setVisibility(View.GONE);
+
+            destination2TextView.setText("");
+            destination2Button.setVisibility(View.GONE);
+            destination2TextView.setVisibility(View.GONE);
+        } else if (destinationsList.size() == 1){
+            //1 item in last home page state
+            destination1TextView.setText(destinationsList.get(0));
+
+            destination2Button.setVisibility(View.GONE);
+            destination2TextView.setVisibility(View.GONE);
+            destination2TextView.setText("");
+        } else {
+            //2 items in last home page state
+            destination1TextView.setText(destinationsList.get(0));
+            destination2TextView.setText(destinationsList.get(1));
+        }
 
         if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
         if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
