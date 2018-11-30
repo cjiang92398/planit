@@ -14,7 +14,7 @@ public class OngoingGamesActivity extends AppCompatActivity {
     }
 
     public void checkinGame(View view) {
-        Intent intent = new Intent(this, CheckinGameActivity.class); // main activity for now, replace with home
+        Intent intent = new Intent(this, CheckinGameActivity.class);
         startActivity(intent);
     }
 
