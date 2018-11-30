@@ -107,6 +107,14 @@ public class DestinationSetting extends AppCompatActivity {
                     toast.setDuration(Toast.LENGTH_SHORT);
                     toast.setView(layout);
                     toast.show();
+                } else if (johnDoeCheck.getVisibility() == View.INVISIBLE &&
+                    sarahRogersCheck.getVisibility() == View.INVISIBLE &&
+                        elizaSmithCheck.getVisibility() == View.INVISIBLE) {
+                    text.setText("Please invite a friend.");
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(layout);
+                    toast.show();
                 } else {
                     UpdatedHomePage.setDestination(destination);
                     startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
