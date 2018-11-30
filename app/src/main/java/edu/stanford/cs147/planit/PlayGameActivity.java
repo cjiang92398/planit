@@ -17,10 +17,7 @@ import android.os.Handler;
 
 public class PlayGameActivity extends AppCompatActivity {
 
-    private boolean wonGame = false;
-
-    // @ johnson, you'll probably use an activity for playing the actual game
-    // adding my code here for showing the dialog :)
+    Handler h = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,6 @@ public class PlayGameActivity extends AppCompatActivity {
         //GamePlayerView player = (GamePlayerView) findViewById(R.id.gamePlayerView);
 
         final TextView readySetGoText = (TextView) findViewById(R.id.readySetGo);
-        Handler h = new Handler();
         h.postDelayed(new Runnable() {
             public void run() {
                 readySetGoText.setText("SET?");
@@ -49,5 +45,11 @@ public class PlayGameActivity extends AppCompatActivity {
                 finish();
             }
         }, 4500);
+    }
+
+    public void goToOngoingGames(View view) {
+        startActivity(new Intent(PlayGameActivity.this, OngoingGamesActivity.class));
+        setContentView(R.layout.activity_ongoing_games);
+        h.removeCallbacksAndMessages(null);
     }
 }
