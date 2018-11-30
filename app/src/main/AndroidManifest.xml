@@ -19,6 +19,7 @@
         <activity android:name=".Home" />
         <activity android:name=".DestinationSetting" />
         <activity android:name=".CustomizeRequestActivity" android:windowSoftInputMode="stateVisible|adjustPan"></activity>
+        <activity android:name=".CheckinGameActivity"></activity>
         <activity android:name=".PlayGameActivity"></activity>
         <activity android:name=".PlayGameActivity2" android:windowSoftInputMode="stateAlwaysVisible"></activity>
         <activity android:name=".PopBalloonActivity"></activity>
