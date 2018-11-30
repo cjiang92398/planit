@@ -19,11 +19,11 @@ public class CustomizeRequestActivity extends AppCompatActivity {
     }
 
     public void cancel(View view) {
-        // go back to destination/friend setting once Lisa finishes
+        Intent intent = new Intent(this, DestinationSetting.class); // main activity for now, replace with home
+        startActivity(intent);
     }
 
     public void send(View view) {
-        // go to GoHomeActivity once Lisa finishes
         Intent intent = new Intent(this, UpdatedHomePage.class); // main activity for now, replace with home
         startActivity(intent);
         LayoutInflater inflater = getLayoutInflater();
