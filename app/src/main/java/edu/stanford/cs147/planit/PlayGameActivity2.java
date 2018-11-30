@@ -393,8 +393,13 @@ public class PlayGameActivity2 extends AppCompatActivity {
                 new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
-                        Intent intent = new Intent(getApplicationContext(), UpdatedHomePage.class);
-                        startActivity(intent);
+                        if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+                            startActivity(new Intent(PlayGameActivity2.this, Home.class));
+                        } else {
+                            startActivity(new Intent(PlayGameActivity2.this, UpdatedHomePage.class));
+                        }
+                        //Intent intent = new Intent(getApplicationContext(), UpdatedHomePage.class);
+                        //startActivity(intent);
                     }
                 }
         );
