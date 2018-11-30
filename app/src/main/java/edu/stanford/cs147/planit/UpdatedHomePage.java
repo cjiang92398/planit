@@ -8,11 +8,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.content.Context;
 
 import java.util.ArrayList;
 
 public class UpdatedHomePage extends AppCompatActivity {
+
+    public static boolean updatedHomeStarted = false;
 
     private static String newDestination = "";
     public static void setDestination(String destination) {
@@ -28,6 +29,7 @@ public class UpdatedHomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updated_home_page);
+        updatedHomeStarted = true;
 
         //annotations
         final ImageView exclamation1Annotation = findViewById(R.id.exclamation1);
@@ -93,9 +95,6 @@ public class UpdatedHomePage extends AppCompatActivity {
         //handle x1 button click
         x1Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
-                if(destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
-
                 if (destination2Button.getVisibility() != View.GONE && destination3Button.getVisibility() != View.GONE) {
                     //adopt group 2 destination name
                     destination1TextView.setText(destination2TextView.getText());
@@ -134,14 +133,15 @@ public class UpdatedHomePage extends AppCompatActivity {
                 if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
                 if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
                 if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
+
+                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
+
             }
         });
 
         //handle x2 button click
         x2Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
-                if(destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
 
                 if(destination3Button.getVisibility() != View.GONE) {
                     //adopt group 3 destination name
@@ -167,14 +167,14 @@ public class UpdatedHomePage extends AppCompatActivity {
                 if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
                 if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
                 if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
+
+                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
             }
         });
 
         //handle x3 button click
         x3Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                if(destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
-
                 destination3Button.setVisibility(View.GONE);
                 destination3TextView.setVisibility(View.GONE);
                 destination3TextView.setText("");
@@ -188,6 +188,8 @@ public class UpdatedHomePage extends AppCompatActivity {
                 if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
                 if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
                 if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
+
+                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
             }
         });
 

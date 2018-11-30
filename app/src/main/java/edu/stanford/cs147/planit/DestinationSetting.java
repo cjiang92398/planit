@@ -116,6 +116,20 @@ public class DestinationSetting extends AppCompatActivity {
         });
 
 
+
+        //handle return home button click
+        final Button returnHomeButton = findViewById(R.id.returnHome);
+        returnHomeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+                    startActivity(new Intent(DestinationSetting.this, Home.class));
+                } else {
+                    startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
+                }
+            }
+        });
+
+
     }
 
     private void clickJohnDoe(ImageView johnDoeCheck){

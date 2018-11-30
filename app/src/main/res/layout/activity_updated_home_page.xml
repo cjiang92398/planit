@@ -4,102 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdatedHomePage">
-
-    <ImageView
-        android:src="@drawable/homescreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    tools:context=".UpdatedHomePage"
+    android:background="@drawable/homescreen">
 
     <View
         android:id="@+id/horizontalMargin1"
-        android:layout_width="90dp"
+        android:layout_width="33dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/verticalMargin1"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        />
-
-    <Button
-        android:id="@+id/addGame"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_toRightOf="@id/horizontalMargin1"
-        android:layout_below="@id/verticalMargin1"
-        android:background="@android:color/transparent"
+        android:layout_height="65dp"
         />
 
     <View
         android:id="@+id/horizontalMargin2"
-        android:layout_width="195dp"
+        android:layout_width="200dp"
         android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin2"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
         />
 
     <ImageButton
         android:id="@+id/destination1"
         android:src="@drawable/destinationbutton"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargin2"
-        android:layout_below="@id/verticalMargin2"
+        android:layout_below="@id/verticalMargin1"
         android:background="@android:color/transparent"
         />
 
     <TextView
         android:id="@+id/destination1Text"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:inputType="textMultiLine"
-        android:textSize="16dp"
         android:background="@null"
         android:textColor="#7C7C7C"
         android:fontFamily="@font/sniglet"
         android:text="San Francisco"
         android:gravity="center"
         android:layout_toRightOf="@id/horizontalMargin2"
-        android:layout_below="@id/verticalMargin2"
+        android:layout_below="@id/verticalMargin1"
         android:textStyle="bold"
         android:visibility="visible"
+        android:textSize="30sp"
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeMinTextSize="10sp"
-        android:autoSizeMaxTextSize="19sp"
+        android:autoSizeMaxTextSize="30sp"
         />
 
     <View
         android:id="@+id/horizontalMarginx1"
-        android:layout_width="190dp"
+        android:layout_width="193dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/horizontalMargine1"
-        android:layout_width="265dp"
+        android:layout_width="310dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/verticalMarginx1"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         />
 
     <ImageView
         android:id="@+id/ellipses1"
         android:src="@drawable/ellipsesannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine1"
         android:layout_below="@id/verticalMarginx1"
@@ -110,8 +90,8 @@
     <ImageView
         android:id="@+id/exclamation1"
         android:src="@drawable/exclamationannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine1"
         android:layout_below="@id/verticalMarginx1"
@@ -122,8 +102,8 @@
     <ImageButton
         android:id="@+id/x1"
         android:src="@drawable/x"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMarginx1"
         android:layout_below="@id/verticalMarginx1"
@@ -131,18 +111,23 @@
         android:background="@android:color/transparent"
         />
 
-
     <View
         android:id="@+id/verticalMargin6"
         android:layout_width="match_parent"
-        android:layout_height="142dp"
+        android:layout_height="220dp"
+        />
+
+    <View
+        android:id="@+id/verticalMargin4"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
         />
 
     <ImageButton
         android:id="@+id/destination2"
         android:src="@drawable/destinationbutton"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargin1"
         android:layout_below="@id/verticalMargin4"
@@ -151,10 +136,9 @@
 
     <TextView
         android:id="@+id/destination2Text"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:inputType="textMultiLine"
-        android:textSize="16dp"
         android:background="@null"
         android:textColor="#7C7C7C"
         android:fontFamily="@font/sniglet"
@@ -164,29 +148,30 @@
         android:layout_below="@id/verticalMargin4"
         android:textStyle="bold"
         android:visibility="visible"
+        android:textSize="30sp"
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeMinTextSize="10sp"
-        android:autoSizeMaxTextSize="19sp"
+        android:autoSizeMaxTextSize="30sp"
         />
 
     <View
         android:id="@+id/horizontalMarginx3"
-        android:layout_width="170px"
+        android:layout_width="40px"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/horizontalMargine2"
-        android:layout_width="320px"
+        android:layout_width="280px"
         android:layout_height="match_parent"
         />
 
     <ImageView
         android:id="@+id/ellipses2"
         android:src="@drawable/ellipsesannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine2"
         android:layout_below="@id/verticalMarginx2"
@@ -197,8 +182,8 @@
     <ImageView
         android:id="@+id/exclamation2"
         android:src="@drawable/exclamationannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine2"
         android:layout_below="@id/verticalMarginx2"
@@ -209,8 +194,8 @@
     <ImageButton
         android:id="@+id/x2"
         android:src="@drawable/x"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:visibility="gone"
         android:layout_toRightOf="@id/horizontalMarginx3"
@@ -224,17 +209,11 @@
         android:layout_height="match_parent"
         />
 
-    <View
-        android:id="@+id/verticalMargin4"
-        android:layout_width="match_parent"
-        android:layout_height="142dp"
-        />
-
     <ImageButton
         android:id="@+id/destination3"
         android:src="@drawable/destinationbutton"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargin4"
         android:layout_below="@id/verticalMargin4"
@@ -243,10 +222,10 @@
 
     <TextView
         android:id="@+id/destination3Text"
-        android:layout_width="180px"
-        android:layout_height="180px"
+        android:layout_width="148dp"
+        android:layout_height="140dp"
         android:inputType="textMultiLine"
-        android:textSize="16dp"
+        android:textSize="30dp"
         android:background="@null"
         android:textColor="#7C7C7C"
         android:fontFamily="@font/sniglet"
@@ -259,20 +238,20 @@
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeMinTextSize="10sp"
-        android:autoSizeMaxTextSize="19sp"
+        android:autoSizeMaxTextSize="30sp"
         />
 
     <View
         android:id="@+id/verticalMarginx2"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="210dp"
         />
 
     <ImageView
         android:id="@+id/ellipses3"
         android:src="@drawable/ellipsesannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine1"
         android:layout_below="@id/verticalMarginx2"
@@ -283,8 +262,8 @@
     <ImageView
         android:id="@+id/exclamation3"
         android:src="@drawable/exclamationannotation"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMargine1"
         android:layout_below="@id/verticalMarginx2"
@@ -292,12 +271,11 @@
         android:background="@android:color/transparent"
         />
 
-
     <ImageButton
         android:id="@+id/x3"
         android:src="@drawable/x"
-        android:layout_width="55px"
-        android:layout_height="55px"
+        android:layout_width="100px"
+        android:layout_height="100px"
         android:scaleType="fitXY"
         android:layout_toRightOf="@id/horizontalMarginx1"
         android:layout_below="@id/verticalMarginx2"

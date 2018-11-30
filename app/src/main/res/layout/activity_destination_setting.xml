@@ -4,24 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DestinationSetting">
-
-    <ImageView
-        android:src="@drawable/destinationsetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+    tools:context=".DestinationSetting"
+    android:background="@drawable/destinationsetting">
 
     <View
         android:id="@+id/horizontalMargin1"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/verticalMargin1"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="85dp"
         />
 
     <EditText
@@ -32,7 +27,7 @@
         android:inputType="text"
         android:layout_toRightOf="@id/horizontalMargin1"
         android:layout_below="@id/verticalMargin1"
-        android:textSize="12dp"
+        android:textSize="18dp"
         android:background="@null"
         android:textColor="#ffffff"
         android:fontFamily="@font/sniglet"
@@ -41,20 +36,20 @@
 
     <View
         android:id="@+id/horizontalMargin2"
-        android:layout_width="215dp"
+        android:layout_width="235dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/verticalMargin2"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="145dp"
         />
 
     <Button
         android:id="@+id/selectAll"
-        android:layout_width="60dp"
-        android:layout_height="25dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_toRightOf="@id/horizontalMargin2"
         android:layout_below="@id/verticalMargin2"
         android:background="@android:color/transparent"
@@ -62,21 +57,21 @@
 
     <View
         android:id="@+id/horizontalMargin3"
-        android:layout_width="254dp"
+        android:layout_width="298dp"
         android:layout_height="match_parent"
         />
 
     <View
         android:id="@+id/verticalMargin3"
         android:layout_width="match_parent"
-        android:layout_height="262dp"
+        android:layout_height="212dp"
         />
 
     <ImageView
         android:id="@+id/johnDoeCheck"
         android:src="@drawable/checkmark"
-        android:layout_width="17dp"
-        android:layout_height="17dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
         android:layout_toRightOf="@id/horizontalMargin3"
         android:layout_below="@id/verticalMargin3"
         android:scaleType="fitXY"
@@ -89,19 +84,20 @@
         android:layout_toRightOf="@id/horizontalMargin3"
         android:layout_below="@id/verticalMargin3"
         android:background="@android:color/transparent"
+        android:scaleType="fitXY"
         />
 
     <View
         android:id="@+id/verticalMargin4"
         android:layout_width="match_parent"
-        android:layout_height="307dp"
+        android:layout_height="273dp"
         />
 
     <ImageView
         android:id="@+id/sarahRogersCheck"
         android:src="@drawable/checkmark"
-        android:layout_width="17dp"
-        android:layout_height="17dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_toRightOf="@id/horizontalMargin3"
         android:layout_below="@id/verticalMargin4"
         android:scaleType="fitXY"
@@ -119,14 +115,14 @@
     <View
         android:id="@+id/verticalMargin5"
         android:layout_width="match_parent"
-        android:layout_height="355dp"
+        android:layout_height="330dp"
         />
 
     <ImageView
         android:id="@+id/elizaSmithCheck"
         android:src="@drawable/checkmark"
-        android:layout_width="17dp"
-        android:layout_height="17dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_toRightOf="@id/horizontalMargin3"
         android:layout_below="@id/verticalMargin5"
         android:scaleType="fitXY"
@@ -150,14 +146,35 @@
     <View
         android:id="@+id/verticalMargin6"
         android:layout_width="match_parent"
-        android:layout_height="408dp"
+        android:layout_height="385dp"
         />
     <Button
         android:id="@+id/requestIdeasButton"
-        android:layout_width="90dp"
-        android:layout_height="20dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
         android:layout_toRightOf="@id/horizontalMargin4"
         android:layout_below="@id/verticalMargin6"
+        android:background="@android:color/transparent"
+        />
+
+    <View
+        android:id="@+id/horizontalMargin7"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        />
+
+    <View
+        android:id="@+id/verticalMargin7"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        />
+
+    <Button
+        android:id="@+id/returnHome"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_toRightOf="@id/horizontalMargin7"
+        android:layout_below="@id/verticalMargin7"
         android:background="@android:color/transparent"
         />
 
