@@ -196,6 +196,10 @@ public class UpdatedHomePage extends AppCompatActivity {
 
         if (newDestinationsList.size() == 0) {
             //0 items in last home page state
+            destination1TextView.setText("");
+            destination1Button.setVisibility(View.GONE);
+            destination1TextView.setVisibility(View.GONE);
+
             destination2TextView.setText("");
             destination2Button.setVisibility(View.GONE);
             destination2TextView.setVisibility(View.GONE);
@@ -205,15 +209,28 @@ public class UpdatedHomePage extends AppCompatActivity {
             destination3TextView.setVisibility(View.GONE);
         } else if (newDestinationsList.size() == 1) {
             //1 item in last home page state
-            destination2TextView.setText(newDestinationsList.get(0));
+            destination1TextView.setText(newDestinationsList.get(0));
 
+            destination2Button.setVisibility(View.GONE);
+            destination2TextView.setVisibility(View.GONE);
+            destination2TextView.setText("");
+
+            destination3TextView.setText("");
             destination3Button.setVisibility(View.GONE);
             destination3TextView.setVisibility(View.GONE);
-            destination3TextView.setText("");
-        } else {
+        } else if (newDestinationsList.size() == 2) {
             //2 items in last home page state
-            destination2TextView.setText(newDestinationsList.get(0));
-            destination3TextView.setText(newDestinationsList.get(1));
+            destination1TextView.setText(newDestinationsList.get(0));
+            destination2TextView.setText(newDestinationsList.get(1));
+
+            destination3TextView.setText("");
+            destination3Button.setVisibility(View.GONE);
+            destination3TextView.setVisibility(View.GONE);
+        } else {
+            //3 items in last home page state
+            destination1TextView.setText(newDestinationsList.get(0));
+            destination2TextView.setText(newDestinationsList.get(1));
+            destination3TextView.setText(newDestinationsList.get(2));
         }
 
         //handle games button click
@@ -221,6 +238,18 @@ public class UpdatedHomePage extends AppCompatActivity {
         final Button gamesButton = findViewById(R.id.games);
         gamesButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                //save homepage state
+                newDestinationsList.clear();
+                if(!destination1TextView.getText().toString().equals("")) {
+                    newDestinationsList.add(destination1TextView.getText().toString());
+                }
+                if(!destination2TextView.getText().toString().equals("")) {
+                    newDestinationsList.add(destination2TextView.getText().toString());
+                }
+                if(!destination3TextView.getText().toString().equals("")) {
+                    newDestinationsList.add(destination3TextView.getText().toString());
+                }
+
                 startActivity(new Intent(UpdatedHomePage.this, OngoingGamesActivity.class));
             }
         });
@@ -228,9 +257,7 @@ public class UpdatedHomePage extends AppCompatActivity {
         if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
         if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
 
-        exclamation1Annotation.setVisibility(View.VISIBLE);
-
-        destination1TextView.setText(newDestination);
+        if(destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.VISIBLE);
 
     }
 
