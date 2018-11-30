@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class DestinationSetting extends AppCompatActivity {
 
-    private static ArrayList<String> newDestinationsList;
+    public static ArrayList<String> newDestinationsList;
     public static void setDestinationsList(ArrayList<String> destinationsList) {
         newDestinationsList = destinationsList;
     }
@@ -119,7 +119,6 @@ public class DestinationSetting extends AppCompatActivity {
                     newDestinationsList.add(0, destination);
                     UpdatedHomePage.setDestination(destination);
                     startActivity(new Intent(DestinationSetting.this, CustomizeRequestActivity.class));
-                    //startActivity(new Intent(DestinationSetting.this, UpdatedHomePage.class));
                 }
 
             }
