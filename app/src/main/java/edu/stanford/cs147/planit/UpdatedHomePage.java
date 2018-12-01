@@ -1,50 +1,47 @@
 package edu.stanford.cs147.planit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class UpdatedHomePage extends AppCompatActivity {
 
-    public static boolean updatedHomeStarted = false;
-
-    private static String newDestination = "";
-    public static void setDestination(String destination) {
-        newDestination = destination;
-    }
-
-    private static ArrayList<String> newDestinationsList;
-    public static void setDestinationsList(ArrayList<String> destinationsList) {
-        newDestinationsList = destinationsList;
-    }
+    public static boolean updatedHomeStarted = false;          //if user has set destination
+    public static String newDestination = "";          //user input destination
+    public static ArrayList<String> destinationsList;          //list of destinations on home page
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updated_home_page);
+
+        //user has set destination
         updatedHomeStarted = true;
 
-        //annotations
-        final ImageView exclamation1Annotation = findViewById(R.id.exclamation1);
-        final ImageView ellipses1Annotation = findViewById(R.id.ellipses1);
-        final ImageView ellipses2Annotation = findViewById(R.id.ellipses2);
-        final ImageView ellipses3Annotation = findViewById(R.id.ellipses3);
+        //Content views
+        final Button gamesButton = findViewById(R.id.games);
+        final ImageButton destination1Button = findViewById(R.id.destination1);
+        final ImageButton destination2Button = findViewById(R.id.destination2);
+        final ImageButton destination3Button = findViewById(R.id.destination3);
+        final ImageButton x1Button = findViewById(R.id.x1);
+        final ImageButton x2Button = findViewById(R.id.x2);
+        final ImageButton x3Button = findViewById(R.id.x3);
+        final TextView destination1TextView = findViewById(R.id.destination1Text);
+        final TextView destination2TextView = findViewById(R.id.destination2Text);
+        final TextView destination3TextView = findViewById(R.id.destination3Text);
+
+        initializeHomePage(destination1TextView, destination1Button,
+                destination2TextView, destination2Button,
+                destination3TextView, destination3Button);
 
         //handle destination1 button hold
         //shows delete option
-        final ImageButton destination1Button = findViewById(R.id.destination1);
-        final ImageButton x1Button = findViewById(R.id.x1);
-        final TextView destination1TextView = findViewById(R.id.destination1Text);
-        System.out.println("destination1" + destination1TextView.getText().toString());
-        System.out.println("destination2" + newDestination);
-
         destination1Button.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
                 x1Button.setVisibility(View.VISIBLE);
@@ -58,12 +55,8 @@ public class UpdatedHomePage extends AppCompatActivity {
             }
         });
 
-
-        //handle destination1 button hold
+        //handle destination2 button hold
         //shows delete option
-        final ImageButton destination2Button = findViewById(R.id.destination2);
-        final ImageButton x2Button = findViewById(R.id.x2);
-        final TextView destination2TextView = findViewById(R.id.destination2Text);
         destination2Button.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
                 x2Button.setVisibility(View.VISIBLE);
@@ -77,11 +70,8 @@ public class UpdatedHomePage extends AppCompatActivity {
             }
         });
 
-        //handle destination1 button hold
+        //handle destination3 button hold
         //shows delete option
-        final ImageButton destination3Button = findViewById(R.id.destination3);
-        final ImageButton x3Button = findViewById(R.id.x3);
-        final TextView destination3TextView = findViewById(R.id.destination3Text);
         destination3Button.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
                 x3Button.setVisibility(View.VISIBLE);
@@ -98,58 +88,21 @@ public class UpdatedHomePage extends AppCompatActivity {
         //handle x1 button click
         x1Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                if (destination2Button.getVisibility() != View.GONE && destination3Button.getVisibility() != View.GONE) {
-                    //adopt group 2 destination name
-                    destination1TextView.setText(destination2TextView.getText());
 
-                    //adopt group 3 destination name
+                //update destinations
+                if (destination2Button.getVisibility() != View.GONE &&
+                        destination3Button.getVisibility() != View.GONE) {
+                    destination1TextView.setText(destination2TextView.getText());
                     destination2TextView.setText(destination3TextView.getText());
-
-                    //remove group 3
-                    destination3TextView.setText("");
-                    destination3Button.setVisibility(View.GONE);
-                    destination3TextView.setVisibility(View.GONE);
-
+                    removeDestination(destination3TextView, destination3Button);
                 } else if(destination2Button.getVisibility() != View.GONE) {
-                    //adopt group 2 destination name
                     destination1TextView.setText(destination2TextView.getText());
-
-                    //remove group 2
-                    destination2TextView.setText("");
-                    destination2Button.setVisibility(View.GONE);
-                    destination2TextView.setVisibility(View.GONE);
-
+                    removeDestination(destination2TextView, destination2Button);
                 } else {
-                    //remove group 1
-                    destination1TextView.setText("");
-                    destination1Button.setVisibility(View.GONE);
-                    destination1TextView.setVisibility(View.GONE);
+                    removeDestination(destination1TextView, destination1Button);
                 }
 
-
-                x1Button.setVisibility(View.GONE);
-                x2Button.setVisibility(View.GONE);
-                x3Button.setVisibility(View.GONE);
-                ellipses1Annotation.setVisibility(View.GONE);
-                ellipses2Annotation.setVisibility(View.GONE);
-                ellipses3Annotation.setVisibility(View.GONE);
-                if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
-                if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
-                if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
-
-                if(!destination1TextView.getText().toString().equals(newDestination)) {
-                    exclamation1Annotation.setVisibility(View.GONE);
-                    destination1Button.setOnClickListener(new View.OnClickListener(){
-                        public void onClick(View v){
-                            // blank
-                        }
-                    });
-                    destination1TextView.setOnClickListener(new View.OnClickListener(){
-                        public void onClick(View v){
-                            // blank
-                        }
-                    });
-                }
+                displayNotifications();
 
             }
         });
@@ -158,122 +111,121 @@ public class UpdatedHomePage extends AppCompatActivity {
         x2Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
 
+                //update destinations
                 if(destination3Button.getVisibility() != View.GONE) {
-                    //adopt group 3 destination name
                     destination2TextView.setText(destination3TextView.getText());
-
-                    //remove group 3
-                    destination3TextView.setText("");
-                    destination3Button.setVisibility(View.GONE);
-                    destination3TextView.setVisibility(View.GONE);
+                    removeDestination(destination3TextView, destination3Button);
                 } else {
-                    //remove group 2
-                    destination2TextView.setText("");
-                    destination2Button.setVisibility(View.GONE);
-                    destination2TextView.setVisibility(View.GONE);
+                    removeDestination(destination2TextView, destination2Button);
                 }
 
-                x1Button.setVisibility(View.GONE);
-                x2Button.setVisibility(View.GONE);
-                x3Button.setVisibility(View.GONE);
-                ellipses1Annotation.setVisibility(View.GONE);
-                ellipses2Annotation.setVisibility(View.GONE);
-                ellipses3Annotation.setVisibility(View.GONE);
-                if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
-                if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
-                if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
-
-                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
+                displayNotifications();
             }
         });
 
         //handle x3 button click
         x3Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                destination3Button.setVisibility(View.GONE);
-                destination3TextView.setVisibility(View.GONE);
-                destination3TextView.setText("");
-
-                x1Button.setVisibility(View.GONE);
-                x2Button.setVisibility(View.GONE);
-                x3Button.setVisibility(View.GONE);
-                ellipses1Annotation.setVisibility(View.GONE);
-                ellipses2Annotation.setVisibility(View.GONE);
-                ellipses3Annotation.setVisibility(View.GONE);
-                if(destination1TextView.getText().toString().equals("Paris")) ellipses1Annotation.setVisibility(View.VISIBLE);
-                if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
-                if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
-
-                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
+                removeDestination(destination3TextView, destination3Button);
+                displayNotifications();
             }
         });
-
-
-        if (newDestinationsList.size() == 0) {
-            //0 items in last home page state
-            destination1TextView.setText("");
-            destination1Button.setVisibility(View.GONE);
-            destination1TextView.setVisibility(View.GONE);
-
-            destination2TextView.setText("");
-            destination2Button.setVisibility(View.GONE);
-            destination2TextView.setVisibility(View.GONE);
-
-            destination3TextView.setText("");
-            destination3Button.setVisibility(View.GONE);
-            destination3TextView.setVisibility(View.GONE);
-        } else if (newDestinationsList.size() == 1) {
-            //1 item in last home page state
-            destination1TextView.setText(newDestinationsList.get(0));
-
-            destination2Button.setVisibility(View.GONE);
-            destination2TextView.setVisibility(View.GONE);
-            destination2TextView.setText("");
-
-            destination3TextView.setText("");
-            destination3Button.setVisibility(View.GONE);
-            destination3TextView.setVisibility(View.GONE);
-        } else if (newDestinationsList.size() == 2) {
-            //2 items in last home page state
-            destination1TextView.setText(newDestinationsList.get(0));
-            destination2TextView.setText(newDestinationsList.get(1));
-
-            destination3TextView.setText("");
-            destination3Button.setVisibility(View.GONE);
-            destination3TextView.setVisibility(View.GONE);
-        } else {
-            //3 items in last home page state
-            destination1TextView.setText(newDestinationsList.get(0));
-            destination2TextView.setText(newDestinationsList.get(1));
-            destination3TextView.setText(newDestinationsList.get(2));
-        }
 
         //handle games button click
-        //transports user to ongoing games page
-        final Button gamesButton = findViewById(R.id.games);
         gamesButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //save homepage state
-                newDestinationsList.clear();
-                if(!destination1TextView.getText().toString().equals("")) {
-                    newDestinationsList.add(destination1TextView.getText().toString());
-                }
-                if(!destination2TextView.getText().toString().equals("")) {
-                    newDestinationsList.add(destination2TextView.getText().toString());
-                }
-                if(!destination3TextView.getText().toString().equals("")) {
-                    newDestinationsList.add(destination3TextView.getText().toString());
-                }
-
-                startActivity(new Intent(UpdatedHomePage.this, OngoingGamesActivity.class));
+                saveHomepageState(destination1TextView, destination2TextView, destination3TextView);
+                startActivity(new Intent(UpdatedHomePage.this,
+                        OngoingGamesActivity.class));
             }
         });
 
-        if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
-        if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
+    }
 
+    /*
+    * This method initializes the home page by displaying the appropriate destinations and
+    * notifications.
+     */
+    private void initializeHomePage(TextView destination1TextView, ImageButton destination1Button,
+                                    TextView destination2TextView, ImageButton destination2Button,
+                                    TextView destination3TextView, ImageButton destination3Button){
+
+        //display appropriate destinations
+        if (destinationsList.size() == 0) {
+            removeDestination(destination1TextView, destination1Button);
+            removeDestination(destination2TextView, destination2Button);
+            removeDestination(destination3TextView, destination3Button);
+        } else if (destinationsList.size() == 1) {
+            destination1TextView.setText(destinationsList.get(0));
+            removeDestination(destination2TextView, destination2Button);
+            removeDestination(destination3TextView, destination3Button);
+        } else if (destinationsList.size() == 2) {
+            destination1TextView.setText(destinationsList.get(0));
+            destination2TextView.setText(destinationsList.get(1));
+            removeDestination(destination3TextView, destination3Button);
+        } else {
+            destination1TextView.setText(destinationsList.get(0));
+            destination2TextView.setText(destinationsList.get(1));
+            destination3TextView.setText(destinationsList.get(2));
+        }
+
+        displayNotifications();
+
+    }
+
+    /*
+    * This method removes the corresponding destination from home page.
+     */
+    private void removeDestination(TextView destinationTextView, ImageButton destinationButton){
+        destinationTextView.setText("");
+        destinationButton.setVisibility(View.GONE);
+        destinationTextView.setVisibility(View.GONE);
+    }
+
+    /*
+    * This method displays the appropriate notifications on each destination.
+     */
+    private void displayNotifications(){
+
+        //Content views
+        final ImageView ellipses1Annotation = findViewById(R.id.ellipses1);
+        final ImageView ellipses2Annotation = findViewById(R.id.ellipses2);
+        final ImageView ellipses3Annotation = findViewById(R.id.ellipses3);
+        final ImageView exclamation1Annotation = findViewById(R.id.exclamation1);
+        final ImageButton destination1Button = findViewById(R.id.destination1);
+        final ImageButton x1Button = findViewById(R.id.x1);
+        final ImageButton x2Button = findViewById(R.id.x2);
+        final ImageButton x3Button = findViewById(R.id.x3);
+        final TextView destination1TextView = findViewById(R.id.destination1Text);
+        final TextView destination2TextView = findViewById(R.id.destination2Text);
+
+        //clear all x
+        x1Button.setVisibility(View.GONE);
+        x2Button.setVisibility(View.GONE);
+        x3Button.setVisibility(View.GONE);
+
+        //clear all ellipses
+        ellipses1Annotation.setVisibility(View.GONE);
+        ellipses2Annotation.setVisibility(View.GONE);
+        ellipses3Annotation.setVisibility(View.GONE);
+
+        //add ellipses where appropriate
+        if(destination1TextView.getText().toString().equals("Paris")){
+            ellipses1Annotation.setVisibility(View.VISIBLE);
+        }
+        if(destination2TextView.getText().toString().equals("Paris")){
+            ellipses2Annotation.setVisibility(View.VISIBLE);
+        }
+
+        //add exclamations where appropriate
         if(destination1TextView.getText().toString().equals(newDestination)) {
             exclamation1Annotation.setVisibility(View.VISIBLE);
+        } else {
+            exclamation1Annotation.setVisibility(View.GONE);
+        }
+
+        //make user-input destination clickable
+        if(exclamation1Annotation.getVisibility() == View.VISIBLE){
             destination1Button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v){
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
@@ -287,6 +239,24 @@ public class UpdatedHomePage extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    /*
+    * This method saves the destinations in the homepage
+     */
+    private void saveHomepageState(TextView destination1TextView, TextView destination2TextView,
+                                   TextView destination3TextView){
+
+        //destinations on home page
+        String destination1 = destination1TextView.getText().toString();
+        String destination2 = destination2TextView.getText().toString();
+        String destination3 = destination3TextView.getText().toString();
+
+        //save state
+        destinationsList.clear();
+        if(!destination1.equals("")) destinationsList.add(destination1);
+        if(!destination2.equals("")) destinationsList.add(destination2);
+        if(!destination3.equals("")) destinationsList.add(destination3);
 
     }
 

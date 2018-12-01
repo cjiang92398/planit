@@ -19,7 +19,7 @@ public class CustomizeRequestActivity extends AppCompatActivity {
     }
 
     public void cancel(View view) {
-        DestinationSetting.newDestinationsList.remove(0);
+        DestinationSetting.destinationsList.remove(0);
         Intent intent = new Intent(this, DestinationSetting.class); // main activity for now, replace with home
         startActivity(intent);
     }

@@ -76,7 +76,7 @@
 
     <!-- Content -->
     <Button
-        android:id="@+id/addGame"
+        android:id="@+id/addDestination"
         android:background="@android:color/transparent"
         android:layout_below="@id/destinationTopRowVerticalMargin"
         android:layout_height="140dp"
