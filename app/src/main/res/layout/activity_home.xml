@@ -149,50 +149,50 @@
         />
 
     <ImageView
-        android:id="@+id/ellipses1"
+        android:id="@+id/inballoonstagenotif1"
         android:background="@android:color/transparent"
         android:layout_below="@id/destination1XVerticalMargin"
         android:layout_height="100px"
         android:layout_toRightOf="@id/destination1NotifHorizontalMargin"
         android:layout_width="100px"
         android:scaleType="fitXY"
-        android:src="@drawable/ellipsesannotation"
+        android:src="@drawable/inballoonstagenotif"
         android:visibility="gone"
         />
 
     <ImageView
-        android:id="@+id/ellipses2"
+        android:id="@+id/inballoonstagenotif2"
         android:background="@android:color/transparent"
         android:layout_below="@id/destination2NotifVerticalMargin"
         android:layout_height="100px"
         android:layout_toRightOf="@id/destination2NotifHorizontalMargin"
         android:layout_width="100px"
         android:scaleType="fitXY"
-        android:src="@drawable/ellipsesannotation"
+        android:src="@drawable/inballoonstagenotif"
         android:visibility="gone"
         />
 
     <ImageView
-        android:id="@+id/exclamation1"
+        android:id="@+id/ingamestagenotif1"
         android:background="@android:color/transparent"
         android:layout_below="@id/destination1XVerticalMargin"
         android:layout_height="100px"
         android:layout_toRightOf="@id/destination1NotifHorizontalMargin"
         android:layout_width="100px"
         android:scaleType="fitXY"
-        android:src="@drawable/exclamationannotation"
+        android:src="@drawable/ingamestagenotif"
         android:visibility="gone"
         />
 
     <ImageView
-        android:id="@+id/exclamation2"
+        android:id="@+id/ingamestagenotif2"
         android:background="@android:color/transparent"
         android:layout_below="@id/destination2NotifVerticalMargin"
         android:layout_height="100px"
         android:layout_toRightOf="@id/destination2NotifHorizontalMargin"
         android:layout_width="100px"
         android:scaleType="fitXY"
-        android:src="@drawable/exclamationannotation"
+        android:src="@drawable/ingamestagenotif"
         android:visibility="gone"
         />
 

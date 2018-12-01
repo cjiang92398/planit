@@ -188,10 +188,10 @@ public class UpdatedHomePage extends AppCompatActivity {
     private void displayNotifications(){
 
         //Content views
-        final ImageView ellipses1Annotation = findViewById(R.id.ellipses1);
-        final ImageView ellipses2Annotation = findViewById(R.id.ellipses2);
-        final ImageView ellipses3Annotation = findViewById(R.id.ellipses3);
-        final ImageView exclamation1Annotation = findViewById(R.id.exclamation1);
+        final ImageView inballoonstagenotif1 = findViewById(R.id.inballoonstagenotif1);
+        final ImageView inballoonstagenotif2 = findViewById(R.id.inballoonstagenotif2);
+        final ImageView inballoonstagenotif3 = findViewById(R.id.inballoonstagenotif3);
+        final ImageView ingamestagenotif1 = findViewById(R.id.ingamestagenotif1);
         final ImageButton destination1Button = findViewById(R.id.destination1);
         final ImageButton x1Button = findViewById(R.id.x1);
         final ImageButton x2Button = findViewById(R.id.x2);
@@ -205,27 +205,27 @@ public class UpdatedHomePage extends AppCompatActivity {
         x3Button.setVisibility(View.GONE);
 
         //clear all ellipses
-        ellipses1Annotation.setVisibility(View.GONE);
-        ellipses2Annotation.setVisibility(View.GONE);
-        ellipses3Annotation.setVisibility(View.GONE);
+        inballoonstagenotif1.setVisibility(View.GONE);
+        inballoonstagenotif2.setVisibility(View.GONE);
+        inballoonstagenotif3.setVisibility(View.GONE);
 
         //add ellipses where appropriate
         if(destination1TextView.getText().toString().equals("Paris")){
-            ellipses1Annotation.setVisibility(View.VISIBLE);
+            inballoonstagenotif1.setVisibility(View.VISIBLE);
         }
         if(destination2TextView.getText().toString().equals("Paris")){
-            ellipses2Annotation.setVisibility(View.VISIBLE);
+            inballoonstagenotif2.setVisibility(View.VISIBLE);
         }
 
         //add exclamations where appropriate
         if(destination1TextView.getText().toString().equals(newDestination)) {
-            exclamation1Annotation.setVisibility(View.VISIBLE);
+            ingamestagenotif1.setVisibility(View.VISIBLE);
         } else {
-            exclamation1Annotation.setVisibility(View.GONE);
+            ingamestagenotif1.setVisibility(View.GONE);
         }
 
         //make user-input destination clickable
-        if(exclamation1Annotation.getVisibility() == View.VISIBLE){
+        if(ingamestagenotif1.getVisibility() == View.VISIBLE){
             destination1Button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v){
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
@@ -259,7 +259,4 @@ public class UpdatedHomePage extends AppCompatActivity {
         if(!destination3.equals("")) destinationsList.add(destination3);
 
     }
-
-
 }
-
