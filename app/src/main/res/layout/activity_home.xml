@@ -7,236 +7,226 @@
     tools:context=".Home"
     android:background="@drawable/homescreen">
 
+    <!-- Horizontal Margins -->
     <View
-        android:id="@+id/horizontalMargin1"
-        android:layout_width="33dp"
+        android:id="@+id/destination1NotifHorizontalMargin"
         android:layout_height="match_parent"
+        android:layout_width="310dp"
+        />
+    <View
+        android:id="@+id/destination1XHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="190dp"
         />
 
     <View
-        android:id="@+id/verticalMargin1"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:id="@+id/destination2NotifHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="290px"
         />
 
+    <View
+        android:id="@+id/destination2XHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="40px"
+        />
+
+    <View
+        android:id="@+id/destinationLeftColumnHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="33dp"
+        />
+
+    <View
+        android:id="@+id/destinationRightColumnHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="200dp"
+        />
+
+    <View
+        android:id="@+id/gamesVerticalMargin"
+        android:layout_height="440dp"
+        android:layout_width="match_parent"
+        />
+
+    <!-- Vertical Margins -->
+    <View
+        android:id="@+id/destination1XVerticalMargin"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/destination2NotifVerticalMargin"
+        android:layout_height="210dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/destinationBottomRowVerticalMargin"
+        android:layout_height="220dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/destinationTopRowVerticalMargin"
+        android:layout_height="65dp"
+        android:layout_width="match_parent"
+        />
+
+    <!-- Content -->
     <Button
         android:id="@+id/addGame"
-        android:layout_width="148dp"
-        android:layout_height="140dp"
-        android:layout_toRightOf="@id/horizontalMargin1"
-        android:layout_below="@id/verticalMargin1"
         android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin2"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
+        android:layout_below="@id/destinationTopRowVerticalMargin"
+        android:layout_height="140dp"
+        android:layout_toRightOf="@id/destinationLeftColumnHorizontalMargin"
+        android:layout_width="148dp"
         />
 
     <ImageButton
         android:id="@+id/destination1"
-        android:src="@drawable/destinationbutton"
-        android:layout_width="148dp"
-        android:layout_height="140dp"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargin2"
-        android:layout_below="@id/verticalMargin1"
         android:background="@android:color/transparent"
+        android:layout_below="@id/destinationTopRowVerticalMargin"
+        android:layout_height="140dp"
+        android:layout_toRightOf="@id/destinationRightColumnHorizontalMargin"
+        android:layout_width="148dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/destinationbutton"
         />
 
     <TextView
         android:id="@+id/destination1Text"
-        android:layout_width="148dp"
-        android:layout_height="140dp"
-        android:inputType="textMultiLine"
-        android:background="@null"
-        android:textSize="30sp"
-        android:textColor="#7C7C7C"
-        android:fontFamily="@font/sniglet"
-        android:text="Paris"
-        android:gravity="center"
-        android:layout_toRightOf="@id/horizontalMargin2"
-        android:layout_below="@id/verticalMargin1"
-        android:textStyle="bold"
-        android:visibility="visible"
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeMinTextSize="10sp"
         android:autoSizeMaxTextSize="30sp"
-        />
-
-    <View
-        android:id="@+id/horizontalMarginx1"
-        android:layout_width="190dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargine1"
-        android:layout_width="310dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMarginx1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        />
-
-    <ImageView
-        android:id="@+id/exclamation1"
-        android:src="@drawable/exclamationannotation"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargine1"
-        android:layout_below="@id/verticalMarginx1"
-        android:visibility="gone"
-        android:background="@android:color/transparent"
-        />
-
-    <ImageView
-        android:id="@+id/ellipses1"
-        android:src="@drawable/ellipsesannotation"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargine1"
-        android:layout_below="@id/verticalMarginx1"
-        android:visibility="gone"
-        android:background="@android:color/transparent"
-        />
-
-    <ImageButton
-        android:id="@+id/x1"
-        android:src="@drawable/x"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMarginx1"
-        android:layout_below="@id/verticalMarginx1"
-        android:visibility="gone"
-        android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin4"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:background="@null"
+        android:fontFamily="@font/sniglet"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/destinationTopRowVerticalMargin"
+        android:layout_height="140dp"
+        android:layout_toRightOf="@id/destinationRightColumnHorizontalMargin"
+        android:layout_width="148dp"
+        android:text="Paris"
+        android:textColor="#7C7C7C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         />
 
     <ImageButton
         android:id="@+id/destination2"
-        android:src="@drawable/destinationbutton"
-        android:layout_width="148dp"
-        android:layout_height="140dp"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargin1"
-        android:layout_below="@id/verticalMargin4"
         android:background="@android:color/transparent"
+        android:layout_below="@id/destinationBottomRowVerticalMargin"
+        android:layout_height="140dp"
+        android:layout_toRightOf="@id/destinationLeftColumnHorizontalMargin"
+        android:layout_width="148dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/destinationbutton"
         />
 
     <TextView
         android:id="@+id/destination2Text"
-        android:layout_width="148dp"
-        android:layout_height="140dp"
-        android:inputType="textMultiLine"
-        android:background="@null"
-        android:textSize="30sp"
-        android:textColor="#7C7C7C"
-        android:fontFamily="@font/sniglet"
-        android:text="Tokyo"
-        android:gravity="center"
-        android:layout_toRightOf="@id/horizontalMargin1"
-        android:layout_below="@id/verticalMargin4"
-        android:textStyle="bold"
-        android:visibility="visible"
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="2sp"
         android:autoSizeMinTextSize="10sp"
         android:autoSizeMaxTextSize="30sp"
-        />
-
-    <View
-        android:id="@+id/horizontalMarginx3"
-        android:layout_width="40px"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargine2"
-        android:layout_width="290px"
-        android:layout_height="match_parent"
+        android:background="@null"
+        android:fontFamily="@font/sniglet"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/destinationBottomRowVerticalMargin"
+        android:layout_height="140dp"
+        android:layout_toRightOf="@id/destinationLeftColumnHorizontalMargin"
+        android:layout_width="148dp"
+        android:text="Tokyo"
+        android:textColor="#7C7C7C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         />
 
     <ImageView
-        android:id="@+id/exclamation2"
-        android:src="@drawable/exclamationannotation"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargine2"
-        android:layout_below="@id/verticalMarginx2"
-        android:visibility="gone"
+        android:id="@+id/ellipses1"
         android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/verticalMarginx2"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_below="@id/destination1XVerticalMargin"
+        android:layout_height="100px"
+        android:layout_toRightOf="@id/destination1NotifHorizontalMargin"
+        android:layout_width="100px"
+        android:scaleType="fitXY"
+        android:src="@drawable/ellipsesannotation"
+        android:visibility="gone"
         />
 
     <ImageView
         android:id="@+id/ellipses2"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/destination2NotifVerticalMargin"
+        android:layout_height="100px"
+        android:layout_toRightOf="@id/destination2NotifHorizontalMargin"
+        android:layout_width="100px"
+        android:scaleType="fitXY"
         android:src="@drawable/ellipsesannotation"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:scaleType="fitXY"
-        android:layout_toRightOf="@id/horizontalMargine2"
-        android:layout_below="@id/verticalMarginx2"
         android:visibility="gone"
-        android:background="@android:color/transparent"
         />
 
-    <ImageButton
-        android:id="@+id/x2"
-        android:src="@drawable/x"
-        android:layout_width="100px"
+    <ImageView
+        android:id="@+id/exclamation1"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/destination1XVerticalMargin"
         android:layout_height="100px"
+        android:layout_toRightOf="@id/destination1NotifHorizontalMargin"
+        android:layout_width="100px"
         android:scaleType="fitXY"
+        android:src="@drawable/exclamationannotation"
         android:visibility="gone"
-        android:layout_toRightOf="@id/horizontalMarginx3"
-        android:layout_below="@id/verticalMarginx2"
+        />
+
+    <ImageView
+        android:id="@+id/exclamation2"
         android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin4"
-        android:layout_width="195dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin5"
-        android:layout_width="match_parent"
-        android:layout_height="440dp"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin5"
-        android:layout_width="35dp"
-        android:layout_height="match_parent"
+        android:layout_below="@id/destination2NotifVerticalMargin"
+        android:layout_height="100px"
+        android:layout_toRightOf="@id/destination2NotifHorizontalMargin"
+        android:layout_width="100px"
+        android:scaleType="fitXY"
+        android:src="@drawable/exclamationannotation"
+        android:visibility="gone"
         />
 
     <Button
         android:id="@+id/games"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
-        android:layout_toRightOf="@id/horizontalMargin5"
-        android:layout_below="@id/verticalMargin5"
         android:background="@android:color/transparent"
+        android:layout_height="45dp"
+        android:layout_width="120dp"
+        android:layout_toRightOf="@id/destinationLeftColumnHorizontalMargin"
+        android:layout_below="@id/gamesVerticalMargin"
+        />
+
+    <ImageButton
+        android:id="@+id/x1"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/destination1XVerticalMargin"
+        android:layout_height="100px"
+        android:layout_toRightOf="@id/destination1XHorizontalMargin"
+        android:layout_width="100px"
+        android:scaleType="fitXY"
+        android:src="@drawable/x"
+        android:visibility="gone"
+        />
+
+    <ImageButton
+        android:id="@+id/x2"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/destination2NotifVerticalMargin"
+        android:layout_height="100px"
+        android:layout_toRightOf="@id/destination2XHorizontalMargin"
+        android:layout_width="100px"
+        android:scaleType="fitXY"
+        android:src="@drawable/x"
+        android:visibility="gone"
         />
 
 </RelativeLayout>

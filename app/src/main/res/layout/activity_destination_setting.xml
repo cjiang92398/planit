@@ -7,176 +7,179 @@
     tools:context=".DestinationSetting"
     android:background="@drawable/destinationsetting">
 
+    <!-- Horizontal Margins -->
     <View
-        android:id="@+id/horizontalMargin1"
-        android:layout_width="50dp"
+        android:id="@+id/checkHorizontalMargin"
         android:layout_height="match_parent"
+        android:layout_width="298dp"
         />
 
     <View
-        android:id="@+id/verticalMargin1"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:id="@+id/destinationHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="50dp"
         />
 
+    <View
+        android:id="@+id/homeHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="30dp"
+        />
+
+    <View
+        android:id="@+id/requestIdeasHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="185dp"
+        />
+
+    <View
+        android:id="@+id/selectAllHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="235dp"
+        />
+
+    <!-- Vertical Margins -->
+    <View
+        android:id="@+id/destinationVerticalMargin"
+        android:layout_height="85dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/elizaSmithCheckVerticalMargin"
+        android:layout_height="330dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/homeVerticalMargin"
+        android:layout_height="20dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/johnDoeCheckVerticalMargin"
+        android:layout_height="212dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/requestIdeasVerticalMargin"
+        android:layout_height="385dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/sarahRogersCheckVerticalMargin"
+        android:layout_height="273dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/selectAllVerticalMargin"
+        android:layout_height="145dp"
+        android:layout_width="match_parent"
+        />
+
+    <!-- Content -->
     <EditText
         android:id="@+id/destination"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
+        android:background="@null"
+        android:fontFamily="@font/sniglet"
         android:hint="e.g. San Francisco"
         android:inputType="text"
-        android:layout_toRightOf="@id/horizontalMargin1"
-        android:layout_below="@id/verticalMargin1"
-        android:textSize="18dp"
-        android:background="@null"
+        android:layout_below="@id/destinationVerticalMargin"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/destinationHorizontalMargin"
+        android:layout_width="175dp"
         android:textColor="#ffffff"
-        android:fontFamily="@font/sniglet"
         android:textColorHint="#e7e7e7"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin2"
-        android:layout_width="235dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin2"
-        android:layout_width="match_parent"
-        android:layout_height="145dp"
-        />
-
-    <Button
-        android:id="@+id/selectAll"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_toRightOf="@id/horizontalMargin2"
-        android:layout_below="@id/verticalMargin2"
-        android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin3"
-        android:layout_width="298dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin3"
-        android:layout_width="match_parent"
-        android:layout_height="212dp"
-        />
-
-    <ImageView
-        android:id="@+id/johnDoeCheck"
-        android:src="@drawable/checkmark"
-        android:layout_width="26dp"
-        android:layout_height="26dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin3"
-        android:scaleType="fitXY"
-        />
-
-    <Button
-        android:id="@+id/johnDoeButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin3"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        />
-
-    <View
-        android:id="@+id/verticalMargin4"
-        android:layout_width="match_parent"
-        android:layout_height="273dp"
-        />
-
-    <ImageView
-        android:id="@+id/sarahRogersCheck"
-        android:src="@drawable/checkmark"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin4"
-        android:scaleType="fitXY"
-        />
-
-    <Button
-        android:id="@+id/sarahRogersButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin4"
-        android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin5"
-        android:layout_width="match_parent"
-        android:layout_height="330dp"
-        />
-
-    <ImageView
-        android:id="@+id/elizaSmithCheck"
-        android:src="@drawable/checkmark"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin5"
-        android:scaleType="fitXY"
+        android:textSize="18dp"
         />
 
     <Button
         android:id="@+id/elizaSmithButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_toRightOf="@id/horizontalMargin3"
-        android:layout_below="@id/verticalMargin5"
         android:background="@android:color/transparent"
+        android:layout_below="@id/elizaSmithCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:layout_width="26dp"
         />
 
-    <View
-        android:id="@+id/horizontalMargin4"
-        android:layout_width="185dp"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/elizaSmithCheck"
+        android:layout_below="@id/elizaSmithCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:layout_width="26dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/checkmark"
         />
 
-    <View
-        android:id="@+id/verticalMargin6"
-        android:layout_width="match_parent"
-        android:layout_height="385dp"
+    <Button
+        android:id="@+id/johnDoeButton"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/johnDoeCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:layout_width="26dp"
+        android:scaleType="fitXY"
         />
+
+    <ImageView
+        android:id="@+id/johnDoeCheck"
+        android:layout_below="@id/johnDoeCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_width="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:scaleType="fitXY"
+        android:src="@drawable/checkmark"
+        />
+
     <Button
         android:id="@+id/requestIdeasButton"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
-        android:layout_toRightOf="@id/horizontalMargin4"
-        android:layout_below="@id/verticalMargin6"
         android:background="@android:color/transparent"
-        />
-
-    <View
-        android:id="@+id/horizontalMargin7"
-        android:layout_width="30dp"
-        android:layout_height="match_parent"
-        />
-
-    <View
-        android:id="@+id/verticalMargin7"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_below="@id/requestIdeasVerticalMargin"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/requestIdeasHorizontalMargin"
+        android:layout_width="150dp"
         />
 
     <Button
         android:id="@+id/returnHome"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_toRightOf="@id/horizontalMargin7"
-        android:layout_below="@id/verticalMargin7"
         android:background="@android:color/transparent"
+        android:layout_below="@id/homeVerticalMargin"
+        android:layout_height="25dp"
+        android:layout_width="25dp"
+        android:layout_toRightOf="@id/homeHorizontalMargin"
         />
 
+    <Button
+        android:id="@+id/sarahRogersButton"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/sarahRogersCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:layout_width="26dp"
+        />
+
+    <ImageView
+        android:id="@+id/sarahRogersCheck"
+        android:layout_below="@id/sarahRogersCheckVerticalMargin"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/checkHorizontalMargin"
+        android:layout_width="26dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/checkmark"
+        />
+
+    <Button
+        android:id="@+id/selectAll"
+        android:background="@android:color/transparent"
+        android:layout_below="@id/selectAllVerticalMargin"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@id/selectAllHorizontalMargin"
+        android:layout_width="100dp"
+        />
 
 </RelativeLayout>

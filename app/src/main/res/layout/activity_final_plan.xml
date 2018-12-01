@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".FinalPlan">
 
+
+    <!-- Horizontal Margins -->
+
+    <!-- Vertical Margins -->
+
+    <!-- Content -->
+
     <ImageView
         android:src="@drawable/finalplan"
         android:layout_width="wrap_content"
