@@ -42,6 +42,9 @@ public class UpdatedHomePage extends AppCompatActivity {
         final ImageButton destination1Button = findViewById(R.id.destination1);
         final ImageButton x1Button = findViewById(R.id.x1);
         final TextView destination1TextView = findViewById(R.id.destination1Text);
+        System.out.println("destination1" + destination1TextView.getText().toString());
+        System.out.println("destination2" + newDestination);
+
         destination1Button.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v){
                 x1Button.setVisibility(View.VISIBLE);
@@ -134,7 +137,19 @@ public class UpdatedHomePage extends AppCompatActivity {
                 if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
                 if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
 
-                if(!destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.GONE);
+                if(!destination1TextView.getText().toString().equals(newDestination)) {
+                    exclamation1Annotation.setVisibility(View.GONE);
+                    destination1Button.setOnClickListener(new View.OnClickListener(){
+                        public void onClick(View v){
+                            // blank
+                        }
+                    });
+                    destination1TextView.setOnClickListener(new View.OnClickListener(){
+                        public void onClick(View v){
+                            // blank
+                        }
+                    });
+                }
 
             }
         });
@@ -257,7 +272,21 @@ public class UpdatedHomePage extends AppCompatActivity {
         if(destination2TextView.getText().toString().equals("Paris")) ellipses2Annotation.setVisibility(View.VISIBLE);
         if(destination3TextView.getText().toString().equals("Paris")) ellipses3Annotation.setVisibility(View.VISIBLE);
 
-        if(destination1TextView.getText().toString().equals(newDestination)) exclamation1Annotation.setVisibility(View.VISIBLE);
+        if(destination1TextView.getText().toString().equals(newDestination)) {
+            exclamation1Annotation.setVisibility(View.VISIBLE);
+            destination1Button.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
+                    startActivity(intent);
+                }
+            });
+            destination1TextView.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
     }
 

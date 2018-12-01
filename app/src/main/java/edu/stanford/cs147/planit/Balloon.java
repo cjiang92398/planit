@@ -11,14 +11,14 @@ public class Balloon {
     private String idea;
     private RectF rectF;
 
-    public Balloon(String idea) {
+    public Balloon(String idea, float left, float top, float right, float bottom) {
         popped = false;
         this.idea = idea;
         rectF = new RectF();
-        rectF.left = 100f;
-        rectF.right = 300f;
-        rectF.top = 100f;
-        rectF.bottom = 320f;
+        rectF.left = left;
+        rectF.right = right;
+        rectF.top = top;
+        rectF.bottom = bottom;
     }
 
     public void drawBalloon(Canvas canvas) {
@@ -34,6 +34,10 @@ public class Balloon {
 
     public void popBalloon() {
         popped = true;
+    }
+
+    public void retrieveBalloon() {
+        popped = false;
     }
 
     public String getIdea() {

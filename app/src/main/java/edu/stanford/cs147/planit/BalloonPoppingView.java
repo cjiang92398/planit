@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -29,9 +30,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class BalloonPoppingView extends LinearLayout {
-    private List<Balloon> balloons;
-    private List<Balloon> poppedBalloons;
-    private Balloon currBalloon;
+    public List<Balloon> balloons;
+    public List<Balloon> poppedBalloons;
+    public List<Balloon> retrievedBalloons;
+    public Balloon currBalloon;
     private AlertDialog dialog = null;
     private Handler handler;
     private Runnable mLongPressed;
@@ -43,6 +45,7 @@ public class BalloonPoppingView extends LinearLayout {
         super(context, attrs);
         balloons = new ArrayList<Balloon>();
         poppedBalloons = new ArrayList<Balloon>();
+        retrievedBalloons = new ArrayList<Balloon>();
         poppingState = false;
         setWillNotDraw(false);
         BitmapDrawable popImageDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.pop);
@@ -110,11 +113,17 @@ public class BalloonPoppingView extends LinearLayout {
     }
 
     private Balloon getBalloonAtXY(float x, float y) {
-        // write this up after johnson does the balloons
-        return currBalloon;
+        for (int i = balloons.size() - 1; i >= 0; i--) {
+            Balloon balloon = balloons.get(i);
+            RectF rectF = balloon.getRectF();
+            if (x > rectF.left && x < rectF.right && y > rectF.top && y < rectF.bottom) {
+                return balloon;
+            }
+        }
+        return null;
     }
 
-    private void popBalloon() {
+    public void popBalloon() {
         currBalloon.popBalloon();
         poppedBalloons.add(currBalloon);
         poppingState = true;
@@ -128,7 +137,7 @@ public class BalloonPoppingView extends LinearLayout {
             }
             @Override
             public void onFinish() {
-                currBalloon = null;
+                //currBalloon = null;
                 poppingState = false;
                 invalidate();
             }
