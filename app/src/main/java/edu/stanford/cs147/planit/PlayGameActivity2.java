@@ -398,8 +398,6 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         } else {
                             startActivity(new Intent(PlayGameActivity2.this, UpdatedHomePage.class));
                         }
-                        //Intent intent = new Intent(getApplicationContext(), UpdatedHomePage.class);
-                        //startActivity(intent);
                     }
                 }
         );
