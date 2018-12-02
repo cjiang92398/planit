@@ -66,15 +66,16 @@ public class DestinationSetting extends AppCompatActivity {
         });
 
         //handle sarahRogers button click
-        //selects/deselects JohnDoe based on previous state of checkbox
+        //selects/deselects Sarah Rogers based on previous state of checkbox
         sarahRogersButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+                System.out.println("request made");
                 clickSarahRogers(sarahRogersCheck);
             }
         });
 
         //handle elizaSmith button click
-        //selects/deselects JohnDoe based on previous state of checkbox
+        //selects/deselects Eliza Smith based on previous state of checkbox
         elizaSmithButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 clickElizaSmith(elizaSmithCheck);
@@ -168,9 +169,10 @@ public class DestinationSetting extends AppCompatActivity {
     }
 
     /*
-     * This method controls selecting/deselecting Sarah Rogers on the destination setting page.
+     * This method controls selecting/deselecting SaraRogers on the destination setting page.
      */
     private void clickSarahRogers(ImageView sarahRogersCheck){
+        System.out.println("request fulfilled");
         if(sarahRogersCheck.getVisibility() == View.VISIBLE){
             sarahRogersCheck.setVisibility(View.INVISIBLE);
         }
