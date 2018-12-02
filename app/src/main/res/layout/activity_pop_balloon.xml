@@ -6,19 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".PopBalloonActivity" >
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical" >
 
-    <edu.stanford.cs147.planit.BalloonPoppingView
+    <RelativeLayout
         android:id="@+id/balloonPoppingView"
         android:layout_width="match_parent"
-        android:layout_height="500dp">
-    </edu.stanford.cs147.planit.BalloonPoppingView>
+        android:layout_height="580dp">
+
+
+        <ImageView
+            android:id="@+id/p39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ca"
+            android:layout_alignLeft="@+id/ca"
+            android:layout_alignStart="@+id/ca"
+            android:src="@drawable/p39" />
+
+        <ImageView
+            android:id="@+id/alcatraz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ca"
+            android:layout_toEndOf="@+id/ca"
+            android:layout_toRightOf="@+id/ca"
+            android:src="@drawable/alcatraz" />
+
+        <ImageView
+            android:id="@+id/le"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ca"
+            android:layout_alignLeft="@+id/ggb"
+            android:layout_alignStart="@+id/ggb"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
+            android:src="@drawable/le" />
+
+
+        <ImageView
+            android:id="@+id/attp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ca"
+            android:layout_toEndOf="@+id/ca"
+            android:layout_toRightOf="@+id/ca"
+            android:src="@drawable/attp" />
+
+
+        <ImageView
+            android:id="@+id/ca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ls"
+            android:layout_alignLeft="@+id/ls"
+            android:layout_alignStart="@+id/ls"
+            android:src="@drawable/ca" />
+
+        <ImageView
+            android:id="@+id/fw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ls"
+            android:layout_alignLeft="@+id/ls"
+            android:layout_alignStart="@+id/ls"
+            android:layout_marginLeft="84dp"
+            android:layout_marginStart="84dp"
+            android:src="@drawable/fw" />
+
+        <ImageView
+            android:id="@+id/ls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ggb"
+            android:layout_toLeftOf="@+id/bg"
+            android:layout_toStartOf="@+id/bg"
+            android:src="@drawable/ls" />
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ggb"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:src="@drawable/bg" />
+
+        <ImageView
+            android:id="@+id/ggb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="21dp"
+            android:src="@drawable/ggb" />
+
+
+    </RelativeLayout>
 
     <LinearLayout
+        android:layout_below="@id/balloonPoppingView"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -39,23 +132,16 @@
         android:paddingLeft="16dp"
         android:onClick="redo"/>
 
-    <ImageButton
-        android:src="@drawable/donebutton"
-        android:background="@android:color/transparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="108dp"
-        android:onClick="done"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:onClick="done"
+            android:paddingLeft="108dp"
+            android:src="@drawable/donebutton" />
 
     </LinearLayout>
 
-</LinearLayout>
-    <ListView
-        android:id="@+id/list_view"
-        android:background="#FFFFFF"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="500dp" >
-    </ListView>
+</RelativeLayout>
+
 </FrameLayout>
