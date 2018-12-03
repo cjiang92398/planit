@@ -9,32 +9,32 @@
     <View
         android:id="@+id/loginHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         />
 
     <View
         android:id="@+id/usernamePasswordHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="65dp"
+        android:layout_width="70dp"
         />
 
 
     <!-- Vertical Margins -->
     <View
         android:id="@+id/loginVerticalMargin"
-        android:layout_height="360dp"
+        android:layout_height="415dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/passwordVerticalMargin"
-        android:layout_height="318dp"
+        android:layout_height="370dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/usernameVerticalMargin"
-        android:layout_height="273dp"
+        android:layout_height="318dp"
         android:layout_width="match_parent"
         />
 
@@ -44,9 +44,9 @@
         android:id="@+id/login"
         android:background="@android:color/transparent"
         android:layout_below="@id/loginVerticalMargin"
-        android:layout_height="33dp"
+        android:layout_height="40dp"
         android:layout_toRightOf="@id/loginHorizontalMargin"
-        android:layout_width="285dp"
+        android:layout_width="305dp"
         />
 
     <EditText

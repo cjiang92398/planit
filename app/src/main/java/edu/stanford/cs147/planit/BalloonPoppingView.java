@@ -22,6 +22,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ import java.util.Stack;
 public class BalloonPoppingView extends LinearLayout {
     public List<Balloon> balloons;
     public List<Balloon> poppedBalloons;
+    public static List<Balloon> remainingBalloons;
     public List<Balloon> retrievedBalloons;
     public Balloon currBalloon;
     private AlertDialog dialog = null;
@@ -45,6 +47,7 @@ public class BalloonPoppingView extends LinearLayout {
         super(context, attrs);
         balloons = new ArrayList<Balloon>();
         poppedBalloons = new ArrayList<Balloon>();
+        remainingBalloons = new ArrayList<Balloon>();
         retrievedBalloons = new ArrayList<Balloon>();
         poppingState = false;
         setWillNotDraw(false);
@@ -63,6 +66,8 @@ public class BalloonPoppingView extends LinearLayout {
     public void setBalloons(List<Balloon> balloons) {
         this.balloons = balloons;
         currBalloon = balloons.get(0);
+
+        this.remainingBalloons = balloons;
     }
 
     @Override
@@ -130,6 +135,7 @@ public class BalloonPoppingView extends LinearLayout {
     public void popBalloon() {
         currBalloon.popBalloon();
         poppedBalloons.add(currBalloon);
+        remainingBalloons.remove(currBalloon);
         poppingState = true;
         invalidate();
         new CountDownTimer(1000, 1000) {

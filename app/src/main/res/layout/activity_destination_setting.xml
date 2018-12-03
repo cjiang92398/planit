@@ -11,13 +11,13 @@
     <View
         android:id="@+id/checkHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="288dp"
+        android:layout_width="310dp"
         />
 
     <View
         android:id="@+id/destinationHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="52dp"
+        android:layout_width="55dp"
         />
 
     <View
@@ -29,25 +29,25 @@
     <View
         android:id="@+id/requestIdeasHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="185dp"
+        android:layout_width="200dp"
         />
 
     <View
         android:id="@+id/selectAllHorizontalMargin"
         android:layout_height="match_parent"
-        android:layout_width="233dp"
+        android:layout_width="250dp"
         />
 
     <!-- Vertical Margins -->
     <View
         android:id="@+id/destinationVerticalMargin"
-        android:layout_height="145dp"
+        android:layout_height="172dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/elizaSmithCheckVerticalMargin"
-        android:layout_height="381dp"
+        android:layout_height="445dp"
         android:layout_width="match_parent"
         />
 
@@ -59,25 +59,25 @@
 
     <View
         android:id="@+id/johnDoeCheckVerticalMargin"
-        android:layout_height="272dp"
+        android:layout_height="320dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/requestIdeasVerticalMargin"
-        android:layout_height="436dp"
+        android:layout_height="505dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/sarahRogersCheckVerticalMargin"
-        android:layout_height="326dp"
+        android:layout_height="383dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/selectAllVerticalMargin"
-        android:layout_height="213dp"
+        android:layout_height="245dp"
         android:layout_width="match_parent"
         />
 
@@ -91,7 +91,7 @@
         android:layout_below="@id/destinationVerticalMargin"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/destinationHorizontalMargin"
-        android:layout_width="175dp"
+        android:layout_width="280dp"
         android:textColor="#ffffff"
         android:textColorHint="#e7e7e7"
         android:textSize="15dp"
@@ -140,17 +140,17 @@
         android:id="@+id/requestIdeasButton"
         android:background="@android:color/transparent"
         android:layout_below="@id/requestIdeasVerticalMargin"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:layout_toRightOf="@id/requestIdeasHorizontalMargin"
-        android:layout_width="135dp"
+        android:layout_width="145dp"
         />
 
     <Button
         android:id="@+id/returnHome"
         android:background="@android:color/transparent"
         android:layout_below="@id/homeVerticalMargin"
-        android:layout_height="30dp"
-        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_width="35dp"
         android:layout_toRightOf="@id/homeHorizontalMargin"
         />
 
@@ -177,9 +177,9 @@
         android:id="@+id/selectAll"
         android:background="@android:color/transparent"
         android:layout_below="@id/selectAllVerticalMargin"
-        android:layout_height="32dp"
+        android:layout_height="40dp"
         android:layout_toRightOf="@id/selectAllHorizontalMargin"
-        android:layout_width="87dp"
+        android:layout_width="95dp"
         />
 
 </RelativeLayout>
