@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, PopBalloonActivity.class));
 
         //handle login button click
-        final Button loginButton = findViewById(R.id.login);
+        /*final Button loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -62,6 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        });
+        });*/
     }
 }

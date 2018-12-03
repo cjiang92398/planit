@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PopBalloonActivity extends AppCompatActivity {
+    public static ArrayList<Balloon> balloons = new ArrayList<Balloon>();
     private BalloonPoppingView popper;
 
     @Override
@@ -49,9 +50,7 @@ public class PopBalloonActivity extends AppCompatActivity {
         Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f);
 
         BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
-        Balloon ggbballoon = new Balloon("Golden Gate Bridge", ggbballoonDrawable, 500f, 848f);
-
-        List<Balloon> balloons = new ArrayList<Balloon>();
+        Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 848f);
 
         balloons.add(p39balloon);
         balloons.add(aballoon);
@@ -137,7 +136,6 @@ public class PopBalloonActivity extends AppCompatActivity {
     public void undo(Balloon currBalloon) {
         if (!popper.poppedBalloons.isEmpty()) {
             popper.poppedBalloons.remove(currBalloon);
-            popper.savedBalloons.add(currBalloon);
             popper.retrievedBalloons.add(currBalloon);
             currBalloon.retrieveBalloon();
             popper.invalidate();
@@ -155,6 +153,16 @@ public class PopBalloonActivity extends AppCompatActivity {
     public void done(View view) {
         Intent intent = new Intent(this, FinalPlan.class);
         startActivity(intent);
+        for(int i = 0; i < popper.balloons.size(); i++){
+            boolean saveIdea = true;
+            for(int j = 0; j < popper.poppedBalloons.size(); j++){
+                if(popper.balloons.get(i).getIdea()
+                        .equals(popper.poppedBalloons.get(j).getIdea())){
+                    saveIdea = false;
+                }
+            }
+            if(saveIdea == true) popper.savedBalloons.add(balloons.get(i).getIdea());
+        }
     }
 
     public Balloon getBalloonByIdea(String idea) {
