@@ -11,14 +11,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class FinalPlan extends AppCompatActivity {
+    private BalloonPoppingView popper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_plan);
+        popper = (BalloonPoppingView) findViewById(R.id.balloonPoppingView);
 
         listIdeas();
 
@@ -34,7 +38,17 @@ public class FinalPlan extends AppCompatActivity {
         final Button returnHomeButton = findViewById(R.id.returnHome);
         returnHomeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                    returnHome();
+                returnHome();
+            }
+        });
+
+        //handle return back button click
+        final Button backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            //TODO: reset balloons
+
+            public void onClick(View v) {
+                startActivity(new Intent(FinalPlan.this, PopBalloonActivity.class));
             }
         });
 
@@ -68,22 +82,14 @@ public class FinalPlan extends AppCompatActivity {
      */
     private void listIdeas(){
         ListView ideasListView = findViewById(R.id.ideasList);
-        ArrayList<String> selectedIdeas = new ArrayList<String>();
 
-        //List<Balloon> remainingBalloons = BalloonPoppingView.remainingBalloons;
-        //for(int i = 0; i < remainingBalloons.size(); i++) {
-        //    selectedIdeas.add(remainingBalloons.get(i).getIdea());
-        //}
-        selectedIdeas.add("idea1");
-        selectedIdeas.add("idea2");
-        selectedIdeas.add("idea3");
-        selectedIdeas.add("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        selectedIdeas.add("idea1");
-        selectedIdeas.add("idea2");
-        selectedIdeas.add("idea3");
+        ArrayList<String> savedBalloons = new ArrayList<String>();
+        for(int i = 0; i < popper.savedBalloons.size(); i++) {
+            savedBalloons.add(popper.savedBalloons.get(i).getIdea());
+        }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, selectedIdeas);
+                android.R.layout.simple_list_item_1, savedBalloons);
         ideasListView.setAdapter(adapter);
 
         if(ideasListView.getHeight() <= 0) {
@@ -93,12 +99,11 @@ public class FinalPlan extends AppCompatActivity {
         }
 
     }
-    //TODO: error checking?
-    //TODO: implement get balloon ideas
-    //TODO: dynamic list height change (make custom listview)
+    //TODO: no ideas
+    //TODO: dynamic list height change (custom listview)
+    //TODO: back
+
     //TODO: change back main activity
-    //TODO: back (storage? can use static?)
-    //TODO: done (ID?)
 
 
 }

@@ -35,8 +35,8 @@ import java.util.Stack;
 
 public class BalloonPoppingView extends LinearLayout {
     public List<Balloon> balloons;
+    public static ArrayList<Balloon> savedBalloons;
     public List<Balloon> poppedBalloons;
-    public static List<Balloon> remainingBalloons;
     public List<Balloon> retrievedBalloons;
     public Balloon currBalloon;
     private AlertDialog dialog = null;
@@ -64,8 +64,8 @@ public class BalloonPoppingView extends LinearLayout {
     public BalloonPoppingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         balloons = new ArrayList<Balloon>();
+        savedBalloons = new ArrayList<>();
         poppedBalloons = new ArrayList<Balloon>();
-        remainingBalloons = new ArrayList<Balloon>();
         retrievedBalloons = new ArrayList<Balloon>();
         poppingState = false;
         setWillNotDraw(false);
@@ -84,8 +84,6 @@ public class BalloonPoppingView extends LinearLayout {
     public void setBalloons(List<Balloon> balloons) {
         this.balloons = balloons;
         currBalloon = balloons.get(0);
-
-        this.remainingBalloons = balloons;
     }
 
     @Override
@@ -155,7 +153,6 @@ public class BalloonPoppingView extends LinearLayout {
     public void popBalloon() {
         currBalloon.popBalloon();
         poppedBalloons.add(currBalloon);
-        remainingBalloons.remove(currBalloon);
         poppingState = true;
         invalidate();
         new CountDownTimer(1000, 1000) {
