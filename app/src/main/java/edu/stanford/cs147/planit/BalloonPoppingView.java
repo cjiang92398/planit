@@ -23,11 +23,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class BalloonPoppingView extends LinearLayout {
@@ -42,6 +45,21 @@ public class BalloonPoppingView extends LinearLayout {
     private Bitmap popImage;
     private boolean poppingState;
     private static final long PRESS_DURATION = 750l;
+
+    public Map<String, Integer> map = new HashMap<String, Integer>();
+
+    public void setMap() {
+        map.put("p39details", R.drawable.p39details);
+        map.put("adetails", R.drawable.adetails);
+        map.put("ledetails", R.drawable.ledetails);
+        map.put("cadetails", R.drawable.cadetails);
+        map.put("lsdetails", R.drawable.lsdetails);
+        map.put("attdetails", R.drawable.attdetails);
+        map.put("bgdetails", R.drawable.bgdetails);
+        map.put("fwdetails", R.drawable.fwdetails);
+        map.put("ggbdetails", R.drawable.ggbdetails);
+
+    }
 
     public BalloonPoppingView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -113,9 +131,11 @@ public class BalloonPoppingView extends LinearLayout {
         View layout = inflater.inflate(R.layout.dialog_feature_details, null);
         TextView text = (TextView) layout.findViewById(R.id.idea);
         text.setText(currBalloon.getIdea());
+        ImageView details = (ImageView)  layout.findViewById(R.id.details);
+        details.setImageResource(map.get(currBalloon.getDetails()));
         builder.setView(layout);
         dialog = builder.show();
-        dialog.getWindow().setLayout(650, 625);
+        dialog.getWindow().setLayout(1000, 962);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 

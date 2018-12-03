@@ -20,12 +20,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_pop_balloon);
-        startActivity(new Intent(this, PopBalloonActivity.class));
+        setContentView(R.layout.activity_main);
 
         //handle login button click
-        /*final Button loginButton = findViewById(R.id.login);
+        final Button loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -62,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        });*/
+        });
+
     }
 }

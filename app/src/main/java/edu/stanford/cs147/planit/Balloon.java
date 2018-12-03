@@ -17,8 +17,9 @@ public class Balloon {
     private float bottom;
     private BitmapDrawable bitmapDrawable;
     private Bitmap bitmap;
+    private String details;
 
-    public Balloon(String idea, BitmapDrawable imageDrawable, float left, float top) {
+    public Balloon(String idea, BitmapDrawable imageDrawable, float left, float top, String details) {
         popped = false;
         this.idea = idea;
         this.bitmapDrawable = imageDrawable;
@@ -27,6 +28,7 @@ public class Balloon {
         this.top = top;
         this.right = left + bitmap.getWidth();
         this.bottom = top + 500f;
+        this.details = details;
     }
 
     public void drawBalloon(Canvas canvas) {
@@ -65,4 +67,6 @@ public class Balloon {
     public float getBottom() {
         return bottom;
     }
+
+    public String getDetails() { return details;}
 }
