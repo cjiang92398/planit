@@ -1,34 +1,37 @@
 package edu.stanford.cs147.planit;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 
 public class Balloon {
 
     private boolean popped;
     private String idea;
-    private RectF rectF;
+    private float left;
+    private float top;
+    private float right;
+    private float bottom;
+    private BitmapDrawable bitmapDrawable;
+    private Bitmap bitmap;
 
-    public Balloon(String idea, float left, float top, float right, float bottom) {
+    public Balloon(String idea, BitmapDrawable imageDrawable, float left, float top) {
         popped = false;
         this.idea = idea;
-        rectF = new RectF();
-        rectF.left = left;
-        rectF.right = right;
-        rectF.top = top;
-        rectF.bottom = bottom;
+        this.bitmapDrawable = imageDrawable;
+        bitmap = bitmapDrawable.getBitmap();
+        this.left = left;
+        this.top = top;
+        this.right = left + bitmap.getWidth();
+        this.bottom = top + 500f;
     }
 
     public void drawBalloon(Canvas canvas) {
         if (!popped) {
-            Paint testPaint = new Paint();
-            testPaint.setColor(Color.WHITE);
-            testPaint.setStyle(Paint.Style.STROKE);
-            testPaint.setStrokeWidth(15f);
-            canvas.drawRect(rectF, testPaint);
-            // draw balloon using maybe
+            canvas.drawBitmap(bitmap, left, top, null);
         }
     }
 
@@ -40,11 +43,26 @@ public class Balloon {
         popped = false;
     }
 
+    public boolean isPopped() {
+        return popped;
+    }
+
     public String getIdea() {
         return idea;
     }
 
-    public RectF getRectF() {
-        return rectF;
+    public float getLeft() {
+        return left;
+    }
+    public float getRight() {
+        return right;
+    }
+
+    public float getTop() {
+        return top;
+    }
+
+    public float getBottom() {
+        return bottom;
     }
 }

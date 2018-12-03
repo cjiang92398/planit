@@ -72,7 +72,12 @@ public class BalloonPoppingView extends LinearLayout {
             balloon.drawBalloon(canvas);
         }
         if (poppingState) {
-            canvas.drawBitmap(popImage, null, currBalloon.getRectF(), null);
+            RectF popRectF = new RectF();
+            popRectF.left = currBalloon.getLeft();
+            popRectF.top = currBalloon.getTop();
+            popRectF.right = popRectF.left + 400f;
+            popRectF.bottom = popRectF.top + 500f;
+            canvas.drawBitmap(popImage, null, popRectF, null);
         }
     }
 
@@ -115,8 +120,7 @@ public class BalloonPoppingView extends LinearLayout {
     private Balloon getBalloonAtXY(float x, float y) {
         for (int i = balloons.size() - 1; i >= 0; i--) {
             Balloon balloon = balloons.get(i);
-            RectF rectF = balloon.getRectF();
-            if (x > rectF.left && x < rectF.right && y > rectF.top && y < rectF.bottom) {
+            if (!balloon.isPopped() && x > balloon.getLeft() && x < balloon.getRight() && y > balloon.getTop() && y < balloon.getBottom()) {
                 return balloon;
             }
         }

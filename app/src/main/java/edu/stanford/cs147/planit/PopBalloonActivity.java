@@ -1,6 +1,7 @@
 package edu.stanford.cs147.planit;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,11 +22,15 @@ public class PopBalloonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_balloon);
         popper = (BalloonPoppingView) findViewById(R.id.balloonPoppingView);
-        Balloon balloon1 = new Balloon("San Francisco", 100f, 100f, 300f, 300f);
-        Balloon balloon2 = new Balloon("New York", 400f, 400f, 600f, 600f);
+        BitmapDrawable imageDrawable1 = (BitmapDrawable) getResources().getDrawable(R.drawable.bridgeballoon);
+        Balloon balloon1 = new Balloon("Golden Gate Bridge", imageDrawable1, 500f, 850f);
+        BitmapDrawable imageDrawable2 = (BitmapDrawable) getResources().getDrawable(R.drawable.wharfballoon);
+        Balloon balloon2 = new Balloon("Fisherman's Wharf", imageDrawable2, 483f, 465f);
+        // add balloons here
         List<Balloon> balloons = new ArrayList<Balloon>();
-        balloons.add(balloon1);
         balloons.add(balloon2);
+        balloons.add(balloon1);
+        // make sure you add balloons to list in correct order
         popper.setBalloons(balloons);
         popper.invalidate();
 
