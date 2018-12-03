@@ -216,27 +216,21 @@ public class PlayGameActivity2 extends AppCompatActivity {
                     if (s.length() != 0) ideasList.add(s);
                     textInput.getText().clear();
 
-                    // ADD BALLOON every idea
-                    // CHANGE BACKGROUND every idea
-                    // after IDEA ONE: coral goes higher. blue goes lower.
-                    // after IDEA TWO: coral goes higher. blue goes out of view. green goes lower.
-                    // after IDEA THREE: coral wins/crosses finish line. green goes out of view.
-
                     if (ideasList.size() == 1) {
                         // CORAL GOES HIGHER
                         DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
-                        int topCoral = (int) ((160 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);
+                        int topCoral = (int) ((190 * displayMetrics.density)+0.5);
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
 
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
-                        int topPurpleBalloon = (int) ((80 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int topPurpleBalloon = (int) ((110 * displayMetrics.density)+0.5);
+                        int leftPurpleBalloon = (int) ((165 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
@@ -246,16 +240,16 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         // BLUE GOES LOWER
                         ImageView blue = (ImageView) findViewById(R.id.bluepenguin);
                         ViewGroup.MarginLayoutParams marginParamsBlue = (ViewGroup.MarginLayoutParams) blue.getLayoutParams();
-                        int topBlue = (int) ((200 * displayMetrics.density)+0.5);
-                        int leftBlue = (int) ((270 * displayMetrics.density) + 0.5);;
+                        int topBlue = (int) ((260 * displayMetrics.density)+0.5);
+                        int leftBlue = (int) ((290 * displayMetrics.density) + 0.5);;
                         marginParamsBlue.setMargins(
                                 leftBlue, topBlue,0, 0);
                         blue.requestLayout();
 
                         ImageView greenBalloon = (ImageView) findViewById(R.id.greenballoon);
                         ViewGroup.MarginLayoutParams marginParamsGreenBalloon = (ViewGroup.MarginLayoutParams) greenBalloon.getLayoutParams();
-                        int topGreenBalloon = (int) ((180 * displayMetrics.density)+0.5);
-                        int leftGreenBalloon = (int) ((270 * displayMetrics.density) + 0.5);
+                        int topGreenBalloon = (int) ((250 * displayMetrics.density)+0.5);
+                        int leftGreenBalloon = (int) ((290 * displayMetrics.density) + 0.5);
                         marginParamsGreenBalloon.setMargins(leftGreenBalloon, topGreenBalloon, 0, 0);
                         greenBalloon.requestLayout();
 
@@ -269,23 +263,23 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
-                        int topCoral = (int) ((140 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);;
+                        int topCoral = (int) ((170 * displayMetrics.density)+0.5);
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);;
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
 
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
-                        int topPurpleBalloon = (int) ((60 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int topPurpleBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((80 * displayMetrics.density)+0.5);
-                        int leftTealBalloon = (int) ((130 * displayMetrics.density) + 0.5);
+                        int topTealBalloon = (int) ((110 * displayMetrics.density)+0.5);
+                        int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
@@ -301,7 +295,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         // GREEN GOES LOWER
                         ImageView green = (ImageView) findViewById(R.id.greenpenguin);
                         ViewGroup.MarginLayoutParams marginParamsGreen = (ViewGroup.MarginLayoutParams) green.getLayoutParams();
-                        int topGreen = (int) ((200 * displayMetrics.density)+0.5);
+                        int topGreen = (int) ((240 * displayMetrics.density)+0.5);
                         int leftGreen = (int) ((50 * displayMetrics.density) + 0.5);;
                         marginParamsGreen.setMargins(
                                 leftGreen, topGreen,0, 0);
@@ -309,7 +303,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
 
                         ImageView coralBalloon = (ImageView) findViewById(R.id.coralballoon);
                         ViewGroup.MarginLayoutParams marginParamsCoralBalloon = (ViewGroup.MarginLayoutParams) coralBalloon.getLayoutParams();
-                        int topCoralBalloon = (int) ((180 * displayMetrics.density)+0.5);
+                        int topCoralBalloon = (int) ((220 * displayMetrics.density)+0.5);
                         int leftCoralBalloon = (int) ((50 * displayMetrics.density) + 0.5);
                         marginParamsCoralBalloon.setMargins(leftCoralBalloon, topCoralBalloon, 0, 0);
                         coralBalloon.requestLayout();
@@ -324,30 +318,30 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         DisplayMetrics displayMetrics = getApplicationContext().getResources().getDisplayMetrics();
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
-                        int topCoral = (int) ((120 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);;
+                        int topCoral = (int) ((150 * displayMetrics.density)+0.5);
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);;
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
 
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
-                        int topPurpleBalloon = (int) ((40 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int topPurpleBalloon = (int) ((70 * displayMetrics.density)+0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((60 * displayMetrics.density)+0.5);
-                        int leftTealBalloon = (int) ((130 * displayMetrics.density) + 0.5);
+                        int topTealBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
                         ImageView lavenderBalloon = (ImageView) findViewById(R.id.lavenderballoon);
                         ViewGroup.MarginLayoutParams marginParamsLavenderBalloon = (ViewGroup.MarginLayoutParams) lavenderBalloon.getLayoutParams();
-                        int topLavenderBalloon = (int) ((60 * displayMetrics.density)+0.5);
-                        int leftLavenderBalloon = (int) ((150 * displayMetrics.density) + 0.5);
+                        int topLavenderBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int leftLavenderBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsLavenderBalloon.setMargins(leftLavenderBalloon, topLavenderBalloon, 0, 0);
                         lavenderBalloon.requestLayout();
 

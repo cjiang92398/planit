@@ -93,10 +93,12 @@ public class FinalPlan extends AppCompatActivity {
         }
 
     }
+    //TODO: error checking?
     //TODO: implement get balloon ideas
     //TODO: dynamic list height change (make custom listview)
     //TODO: change back main activity
-    //TODO: other todo from sheet
+    //TODO: back (storage? can use static?)
+    //TODO: done (ID?)
 
 
 }

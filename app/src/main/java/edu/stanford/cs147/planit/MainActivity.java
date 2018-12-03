@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     Home.destinationsList.add("Tokyo");
 
                     //transport user to home page
-                    //startActivity(new Intent(MainActivity.this, Home.class));
+                    startActivity(new Intent(MainActivity.this, Home.class));
 
-                    startActivity(new Intent(MainActivity.this, FinalPlan.class));
+                    //startActivity(new Intent(MainActivity.this, FinalPlan.class));
                 }
 
 
