@@ -14,10 +14,12 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class PopBalloonActivity extends AppCompatActivity {
     public static ArrayList<Balloon> balloons = new ArrayList<Balloon>();
     private BalloonPoppingView popper;
+    private static boolean stateSaved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,42 +27,49 @@ public class PopBalloonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pop_balloon);
         popper = (BalloonPoppingView) findViewById(R.id.balloonPoppingView);
 
-        BitmapDrawable p39balloonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.p39balloon);
-        Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 235f);
+        if(stateSaved == false) {
+            BitmapDrawable p39balloonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.p39balloon);
+            Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 235f);
 
-        BitmapDrawable aballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.aballoon);
-        Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 309f);
+            BitmapDrawable aballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.aballoon);
+            Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 309f);
 
-        BitmapDrawable leballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.leballoon);
-        Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 190f);
+            BitmapDrawable leballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.leballoon);
+            Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 190f);
 
-        BitmapDrawable caballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.caballoon);
-        Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 645f);
+            BitmapDrawable caballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.caballoon);
+            Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 645f);
 
-        BitmapDrawable lsballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.lsballoon);
-        Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 953f);
+            BitmapDrawable lsballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.lsballoon);
+            Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 953f);
 
-        BitmapDrawable attballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.attballoon);
-        Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 650f);
+            BitmapDrawable attballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.attballoon);
+            Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 650f);
 
-        BitmapDrawable bgballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.bgballoon);
-        Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 875f);
+            BitmapDrawable bgballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.bgballoon);
+            Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 875f);
 
-        BitmapDrawable fwballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.fwballoon);
-        Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f);
+            BitmapDrawable fwballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.fwballoon);
+            Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f);
 
-        BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
-        Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 848f);
+            BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
+            Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 848f);
 
-        balloons.add(p39balloon);
-        balloons.add(aballoon);
-        balloons.add(leballoon);
-        balloons.add(caballoon);
-        balloons.add(lsballoon);
-        balloons.add(attballoon);
-        balloons.add(bgballoon);
-        balloons.add(fwballoon);
-        balloons.add(ggbballoon);
+            balloons.add(p39balloon);
+            balloons.add(aballoon);
+            balloons.add(leballoon);
+            balloons.add(caballoon);
+            balloons.add(lsballoon);
+            balloons.add(attballoon);
+            balloons.add(bgballoon);
+            balloons.add(fwballoon);
+            balloons.add(ggbballoon);
+        } else {
+            PopBalloonActivity.balloons.clear();
+            for(int i = 0; i < BalloonPoppingView.savedBalloons.size(); i++) {
+                PopBalloonActivity.balloons.add(BalloonPoppingView.savedBalloons.get(i));
+            }
+        }
 
         popper.setBalloons(balloons);
         popper.invalidate();
@@ -151,9 +160,8 @@ public class PopBalloonActivity extends AppCompatActivity {
     }
 
     public void done(View view) {
-        Intent intent = new Intent(this, FinalPlan.class);
-        startActivity(intent);
-        popper.balloons.clear();
+        BalloonPoppingView.savedBalloons.clear();
+
         for(int i = 0; i < popper.balloons.size(); i++){
             boolean saveIdea = true;
             for(int j = 0; j < popper.poppedBalloons.size(); j++){
@@ -162,8 +170,14 @@ public class PopBalloonActivity extends AppCompatActivity {
                     saveIdea = false;
                 }
             }
-            if(saveIdea == true) popper.savedBalloons.add(balloons.get(i));
+            if(saveIdea == true) {
+                popper.savedBalloons.add(balloons.get(i));
+            }
         }
+
+        stateSaved = true;
+        Intent intent = new Intent(this, FinalPlan.class);
+        startActivity(intent);
     }
 
     public Balloon getBalloonByIdea(String idea) {

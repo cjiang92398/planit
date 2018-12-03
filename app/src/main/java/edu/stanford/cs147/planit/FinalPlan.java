@@ -45,8 +45,6 @@ public class FinalPlan extends AppCompatActivity {
         //handle return back button click
         final Button backButton = findViewById(R.id.back);
         backButton.setOnClickListener(new View.OnClickListener() {
-            //TODO: reset balloons
-
             public void onClick(View v) {
                 startActivity(new Intent(FinalPlan.this, PopBalloonActivity.class));
             }
@@ -97,13 +95,9 @@ public class FinalPlan extends AppCompatActivity {
         } else {
             //set listview height to max
         }
-
     }
     //TODO: no ideas
-    //TODO: dynamic list height change (custom listview)
-    //TODO: back
-
-    //TODO: change back main activity
+    //TODO: dynamic list height change
 
 
 }
