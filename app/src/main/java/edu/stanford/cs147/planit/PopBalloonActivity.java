@@ -24,31 +24,31 @@ public class PopBalloonActivity extends AppCompatActivity {
         popper = (BalloonPoppingView) findViewById(R.id.balloonPoppingView);
 
         BitmapDrawable p39balloonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.p39balloon);
-        Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 235f);
+        Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 235f, "p39details");
 
         BitmapDrawable aballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.aballoon);
-        Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 309f);
+        Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 309f, "adetails");
 
         BitmapDrawable leballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.leballoon);
-        Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 190f);
+        Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 190f, "ledetails");
 
         BitmapDrawable caballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.caballoon);
-        Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 645f);
+        Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 645f, "cadetails");
 
         BitmapDrawable lsballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.lsballoon);
-        Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 953f);
+        Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 953f, "lsdetails");
 
         BitmapDrawable attballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.attballoon);
-        Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 650f);
+        Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 650f, "attdetails");
 
         BitmapDrawable bgballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.bgballoon);
-        Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 875f);
+        Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 875f, "bgdetails");
 
         BitmapDrawable fwballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.fwballoon);
-        Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f);
+        Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f, "fwdetails");
 
         BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
-        Balloon ggbballoon = new Balloon("Golden Gate Bridge", ggbballoonDrawable, 500f, 848f);
+        Balloon ggbballoon = new Balloon("Golden Gate Bridge", ggbballoonDrawable, 500f, 848f, "ggbdetails");
 
         List<Balloon> balloons = new ArrayList<Balloon>();
 
@@ -62,6 +62,7 @@ public class PopBalloonActivity extends AppCompatActivity {
         balloons.add(fwballoon);
         balloons.add(ggbballoon);
 
+        popper.setMap();
         popper.setBalloons(balloons);
         popper.invalidate();
 
