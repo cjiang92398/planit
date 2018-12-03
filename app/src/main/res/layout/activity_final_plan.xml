@@ -10,47 +10,110 @@
 
     <!-- Horizontal Margins -->
     <View
+        android:id="@+id/bannerHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="50dp"
+        />
+
+    <View
+        android:id="@+id/dropdownHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="97dp"
+        />
+
+    <View
         android:id="@+id/homeHorizontalMargin"
         android:layout_height="match_parent"
         android:layout_width="50dp"
         />
 
     <View
+        android:id="@+id/listHorizontalMargin"
+        android:layout_height="match_parent"
+        android:layout_width="120dp"
+        />
+
+    <View
         android:id="@+id/shareHorizontalMargin"
-        android:layout_width="240dp"
+        android:layout_width="255dp"
         android:layout_height="match_parent"
         />
 
     <!-- Vertical Margins -->
     <View
+        android:id="@+id/bannerVerticalMargin"
+        android:layout_height="135dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/dropdownVerticalMargin"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
         android:id="@+id/homeVerticalMargin"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        />
+
+    <View
+        android:id="@+id/listVerticalMargin"
+        android:layout_height="210dp"
         android:layout_width="match_parent"
         />
 
     <View
         android:id="@+id/shareVerticalMargin"
         android:layout_width="match_parent"
-        android:layout_height="505dp"
+        android:layout_height="585dp"
         />
 
     <!-- Content -->
+
+    <ImageView
+        android:layout_below="@id/dropdownVerticalMargin"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dropdownHorizontalMargin"
+        android:layout_width="wrap_content"
+        android:src="@drawable/finalplandropdown"
+        />
+
+    <ListView
+        android:id="@+id/ideasList"
+        android:fontFamily="@font/sniglet"
+        android:layout_below="@id/listVerticalMargin"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/listHorizontalMargin"
+        android:layout_width="590px"
+        android:listSelector="@android:color/transparent"
+        />
+
     <Button
         android:id="@+id/returnHome"
         android:background="@android:color/transparent"
         android:layout_below="@id/homeVerticalMargin"
-        android:layout_height="30dp"
-        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_width="35dp"
         android:layout_toRightOf="@id/homeHorizontalMargin"
         />
 
     <Button
         android:id="@+id/share"
-        android:layout_width="95dp"
-        android:layout_height="35dp"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
         android:layout_toRightOf="@id/shareHorizontalMargin"
         android:layout_below="@id/shareVerticalMargin"
         android:background="@android:color/transparent"
+        />
+
+    <ImageView
+        android:layout_below="@id/bannerVerticalMargin"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/bannerHorizontalMargin"
+        android:layout_width="wrap_content"
+        android:src="@drawable/finalplanbanner"
         />
 
 </RelativeLayout>

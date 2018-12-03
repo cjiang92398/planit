@@ -20,14 +20,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*setContentView(R.layout.activity_play_game_2);
-        startActivity(new Intent(MainActivity.this, PlayGameActivity2.class));*/
-
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_pop_balloon);
         startActivity(new Intent(this, PopBalloonActivity.class));
 
-        /*//handle login button click
+        //handle login button click
         final Button loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -65,6 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        });*/
+        });
     }
 }
