@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,35 +66,69 @@ public class PopBalloonActivity extends AppCompatActivity {
         popper.setBalloons(balloons);
         popper.invalidate();
 
+        //final ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,new ArrayList<String>());
+        //final ListView listView = (ListView) findViewById(R.id.list_view);
+        //listView.setVisibility(View.INVISIBLE);
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setVisibility(View.INVISIBLE);
+        //((ArrayAdapter) adapter).setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ImageButton undoButton = (ImageButton) findViewById(R.id.undo);
+
         undoButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                undo(popper.poppedBalloons.get(popper.poppedBalloons.size() - 1));
+                if (!popper.poppedBalloons.isEmpty()) {
+                    undo(popper.poppedBalloons.get(popper.poppedBalloons.size() - 1));
+                }
+                //listView.setVisibility(View.INVISIBLE);
             }
         });
 
         undoButton.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v) {
-                // implement list view
-                List<String> poppedBalloonIdeas = new ArrayList<String>();
-                for (int i = popper.poppedBalloons.size() - 1; i >= 0; i--) {
-                    Balloon balloon = popper.poppedBalloons.get(i);
-                    poppedBalloonIdeas.add(balloon.getIdea());
-                }
-                String[] poppedBalloonIdeasArray = poppedBalloonIdeas.toArray(new String[poppedBalloonIdeas.size()]);
-                final ListView listView = (ListView) findViewById(R.id.list_view);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Object listItem = listView.getItemAtPosition(position);
-                        Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
-                        undo(poppedBalloon);
+                // initialize list view
+                if (!popper.poppedBalloons.isEmpty()) {
+                    spinner.setVisibility(View.VISIBLE);
+                    //listView.setVisibility(View.VISIBLE);
+                    String[] poppedBalloonsNameArr = new String[popper.poppedBalloons.size()];
+                    for (int i = 0; i < popper.poppedBalloons.size(); i++) {
+                        Balloon balloon = popper.poppedBalloons.get(i);
+                        poppedBalloonsNameArr[i] = balloon.getIdea();
                     }
-                });
-                listView.setStackFromBottom(true);
-                // STILL TRYING TO FIGURE OUT HOW TO FORMAT LIST VIEW
-                ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,poppedBalloonIdeasArray);
-                listView.setAdapter(adapter);
+
+                    final ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,poppedBalloonsNameArr);
+                    ((ArrayAdapter) adapter).setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            Object listItem = spinner.getItemAtPosition(position);
+                            Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
+                            undo(poppedBalloon);
+                            spinner.setVisibility(View.INVISIBLE);
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+                            spinner.setVisibility(View.INVISIBLE);
+                        }
+                    });
+                    //((ArrayAdapter) adapter).clear();
+                    /*for (int i = 0; i < popper.poppedBalloons.size(); i++) {
+                        Balloon balloon = popper.poppedBalloons.get(i);
+                        ((ArrayAdapter) adapter).add((Object) balloon.getIdea());
+                    }*/
+                    /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Object listItem = listView.getItemAtPosition(position);
+                            Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
+                            undo(poppedBalloon);
+                            listView.setVisibility(View.INVISIBLE);
+                        }
+                    });
+                    listView.setAdapter(adapter);*/
+                    spinner.setAdapter(adapter);
+                    spinner.performClick();
+                }
                 return true;
             }
         });
@@ -102,12 +137,12 @@ public class PopBalloonActivity extends AppCompatActivity {
     public void undo(Balloon currBalloon) {
         if (!popper.poppedBalloons.isEmpty()) {
             popper.poppedBalloons.remove(currBalloon);
+            popper.savedBalloons.add(currBalloon);
             popper.retrievedBalloons.add(currBalloon);
             currBalloon.retrieveBalloon();
             popper.invalidate();
         }
     }
-
 
     public void redo(View view) {
         if (!popper.retrievedBalloons.isEmpty()) {

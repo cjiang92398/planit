@@ -15,7 +15,7 @@
     <edu.stanford.cs147.planit.BalloonPoppingView
         android:id="@+id/balloonPoppingView"
         android:layout_width="match_parent"
-        android:layout_height="600dp">
+        android:layout_height="500dp">
     </edu.stanford.cs147.planit.BalloonPoppingView>
 
     <LinearLayout
@@ -50,12 +50,26 @@
     </LinearLayout>
 
 </LinearLayout>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="24dp" >
+    </Spinner>
+
+    <!--
     <ListView
         android:id="@+id/list_view"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
         android:background="#FFFFFF"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="500dp" >
-    </ListView>
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="296dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginLeft="24dp">
+    </ListView> -->
+
 </FrameLayout>
