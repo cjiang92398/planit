@@ -32,7 +32,7 @@ import java.util.Stack;
 
 public class BalloonPoppingView extends LinearLayout {
     public List<Balloon> balloons;
-    public static ArrayList<String> savedBalloons;
+    public static ArrayList<Balloon> savedBalloons;
     public List<Balloon> poppedBalloons;
     public List<Balloon> retrievedBalloons;
     public Balloon currBalloon;

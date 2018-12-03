@@ -153,6 +153,7 @@ public class PopBalloonActivity extends AppCompatActivity {
     public void done(View view) {
         Intent intent = new Intent(this, FinalPlan.class);
         startActivity(intent);
+        popper.balloons.clear();
         for(int i = 0; i < popper.balloons.size(); i++){
             boolean saveIdea = true;
             for(int j = 0; j < popper.poppedBalloons.size(); j++){
@@ -161,7 +162,7 @@ public class PopBalloonActivity extends AppCompatActivity {
                     saveIdea = false;
                 }
             }
-            if(saveIdea == true) popper.savedBalloons.add(balloons.get(i).getIdea());
+            if(saveIdea == true) popper.savedBalloons.add(balloons.get(i));
         }
     }
 
