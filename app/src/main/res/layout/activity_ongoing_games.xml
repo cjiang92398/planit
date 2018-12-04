@@ -12,41 +12,31 @@
         android:src="@drawable/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:paddingTop="24dp"
+        android:paddingLeft="40dp"
+        android:paddingTop="40dp"
         android:onClick="goHome" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sniglet"
-        android:text="Ongoing Games"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="32dp"
-        android:textStyle="bold" />
 
     <ImageView
         android:src="@drawable/sanfrancisco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:paddingTop="16dp"
+        android:paddingLeft="36dp"
+        android:paddingTop="56dp"
         android:onClick="checkinGame"/>
 
     <ImageView
         android:src="@drawable/london"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
+        android:paddingLeft="36dp"
         android:paddingTop="16dp" />
 
     <ImageView
         android:src="@drawable/questionmark"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_gravity="bottom|right"
-        android:paddingTop="88dp"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="296dp"
+        android:paddingTop="216dp"
+        android:onClick="goHome" />
 
 </LinearLayout>
