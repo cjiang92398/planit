@@ -15,7 +15,7 @@ public class CheckinGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkin_game);
 
-        new CountDownTimer(1000, 1000) {
+        new CountDownTimer(1500, 1000) {
             @Override
             public void onTick(long n) {
                 // blank
@@ -24,7 +24,7 @@ public class CheckinGameActivity extends AppCompatActivity {
             public void onFinish() {
                 ImageView imageView = (ImageView) findViewById(R.id.checkin);
                 imageView.setImageResource(R.drawable.checkinfinal);
-                new CountDownTimer(1000, 1000) {
+                new CountDownTimer(1500, 1000) {
                     @Override
                     public void onTick(long n) {
                         // blank
