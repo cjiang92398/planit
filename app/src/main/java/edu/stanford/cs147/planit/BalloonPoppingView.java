@@ -82,7 +82,7 @@ public class BalloonPoppingView extends LinearLayout {
 
     public void setBalloons(List<Balloon> balloons) {
         this.balloons = balloons;
-        currBalloon = balloons.get(0);
+        if(balloons.size() > 0) currBalloon = balloons.get(0);
     }
 
     @Override

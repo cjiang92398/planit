@@ -53,7 +53,7 @@ public class PopBalloonActivity extends AppCompatActivity {
             Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f, "fwdetails");
 
             BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
-            Balloon ggbballoon = new Balloon("Golden Gate Bridge", ggbballoonDrawable, 500f, 848f, "ggbdetails");
+            Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 848f, "ggbdetails");
 
             balloons.add(p39balloon);
             balloons.add(aballoon);

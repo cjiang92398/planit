@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -90,14 +92,26 @@ public class FinalPlan extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, savedBalloons);
         ideasListView.setAdapter(adapter);
 
-        if(ideasListView.getHeight() <= 0) {
-            //adjust banner height
-        } else {
-            //set listview height to max
+
+        final ImageView generalDropdown = findViewById(R.id.generalDropdown);
+        if(savedBalloons.size() == 0) {
+            generalDropdown.getLayoutParams().height = 716;
+            final TextView noIdeasMessage = findViewById(R.id.noIdeasMessage);
+            noIdeasMessage.setVisibility(View.VISIBLE);
+        } else if (savedBalloons.size() == 1) {
+            generalDropdown.getLayoutParams().height = 200;
+        } else if (savedBalloons.size() == 2) {
+            generalDropdown.getLayoutParams().height = 375;
+        } else if (savedBalloons.size() == 3) {
+            generalDropdown.getLayoutParams().height = 547;
+        } else if (savedBalloons.size() == 4) {
+            generalDropdown.getLayoutParams().height = 716;
+        } else if (savedBalloons.size() == 5) {
+            generalDropdown.getLayoutParams().height = 885;
         }
+
+
     }
-    //TODO: no ideas
-    //TODO: dynamic list height change
 
 
 }
