@@ -1,6 +1,7 @@
 package edu.stanford.cs147.planit;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class PopBalloonActivity extends AppCompatActivity {
     public static ArrayList<Balloon> balloons = new ArrayList<Balloon>();
     private BalloonPoppingView popper;
     private static boolean stateSaved = false;
+    private int numLongPress = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,31 +31,32 @@ public class PopBalloonActivity extends AppCompatActivity {
 
         if(stateSaved == false) {
             BitmapDrawable p39balloonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.p39balloon);
-            Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 235f, "p39details");
+            Balloon p39balloon = new Balloon("Pier 39", p39balloonDrawable, 198f, 45f,"p39details");
 
             BitmapDrawable aballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.aballoon);
-            Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 309f, "adetails");
+            Balloon aballoon = new Balloon("Alcatraz", aballoonDrawable, 703f, 119f, "adetails");
 
             BitmapDrawable leballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.leballoon);
-            Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 190f, "ledetails");
+            Balloon leballoon = new Balloon("Land's End", leballoonDrawable, 530f, 0f, "ledetails");
 
             BitmapDrawable caballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.caballoon);
-            Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 645f, "cadetails");
+            Balloon caballoon = new Balloon("Clarion Alley", caballoonDrawable, 193f, 455f, "cadetails");
 
             BitmapDrawable lsballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.lsballoon);
-            Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 953f, "lsdetails");
+            Balloon lsballoon = new Balloon("Lombard Street", lsballoonDrawable, 179f, 763f, "lsdetails");
 
             BitmapDrawable attballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.attballoon);
-            Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 650f, "attdetails");
+            Balloon attballoon = new Balloon("AT&T Park", attballoonDrawable, 702f, 460f, "attdetails");
 
             BitmapDrawable bgballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.bgballoon);
-            Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 875f, "bgdetails");
+            Balloon bgballoon = new Balloon("Boba Guys", bgballoonDrawable, 698f, 685f, "bgdetails");
 
             BitmapDrawable fwballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.fwballoon);
-            Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 465f, "fwdetails");
+            Balloon fwballoon = new Balloon("Fisherman's Wharf", fwballoonDrawable, 483f, 275f, "fwdetails");
 
             BitmapDrawable ggbballoonDrawable = (BitmapDrawable) getResources().getDrawable(R.drawable.ggbballoon);
-            Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 848f, "ggbdetails");
+
+            Balloon ggbballoon = new Balloon("Golden Gate", ggbballoonDrawable, 500f, 658f, "ggbdetails");
 
             balloons.add(p39balloon);
             balloons.add(aballoon);
@@ -64,6 +67,7 @@ public class PopBalloonActivity extends AppCompatActivity {
             balloons.add(bgballoon);
             balloons.add(fwballoon);
             balloons.add(ggbballoon);
+
         } else {
             PopBalloonActivity.balloons.clear();
             for(int i = 0; i < BalloonPoppingView.savedBalloons.size(); i++) {
@@ -75,12 +79,10 @@ public class PopBalloonActivity extends AppCompatActivity {
         popper.setBalloons(balloons);
         popper.invalidate();
 
-        //final ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,new ArrayList<String>());
-        //final ListView listView = (ListView) findViewById(R.id.list_view);
-        //listView.setVisibility(View.INVISIBLE);
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setVisibility(View.INVISIBLE);
-        //((ArrayAdapter) adapter).setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        final ListAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,new ArrayList<String>());
+        final ListView listView = (ListView) findViewById(R.id.list_view);
+        listView.setVisibility(View.INVISIBLE);
+
         ImageButton undoButton = (ImageButton) findViewById(R.id.undo);
 
         undoButton.setOnClickListener(new View.OnClickListener(){
@@ -88,55 +90,36 @@ public class PopBalloonActivity extends AppCompatActivity {
                 if (!popper.poppedBalloons.isEmpty()) {
                     undo(popper.poppedBalloons.get(popper.poppedBalloons.size() - 1));
                 }
-                //listView.setVisibility(View.INVISIBLE);
+                listView.setVisibility(View.INVISIBLE);
             }
         });
 
         undoButton.setOnLongClickListener(new View.OnLongClickListener(){
             public boolean onLongClick(View v) {
-                // initialize list view
+                numLongPress++;
                 if (!popper.poppedBalloons.isEmpty()) {
-                    spinner.setVisibility(View.VISIBLE);
-                    //listView.setVisibility(View.VISIBLE);
-                    String[] poppedBalloonsNameArr = new String[popper.poppedBalloons.size()];
-                    for (int i = 0; i < popper.poppedBalloons.size(); i++) {
-                        Balloon balloon = popper.poppedBalloons.get(i);
-                        poppedBalloonsNameArr[i] = balloon.getIdea();
+                    if (numLongPress % 2 == 1) {
+                        listView.setVisibility(View.VISIBLE);
+                        ((ArrayAdapter) adapter).clear();
+                        for (int i = 0; i < popper.poppedBalloons.size(); i++) {
+                            Balloon balloon = popper.poppedBalloons.get(i);
+                            ((ArrayAdapter) adapter).add((Object) balloon.getIdea());
+                        }
+
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                Object listItem = listView.getItemAtPosition(position);
+                                Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
+                                undo(poppedBalloon);
+                                listView.setVisibility(View.INVISIBLE);
+                                numLongPress++;
+                            }
+                        });
+                        listView.setAdapter(adapter);
+                    } else {
+                        listView.setVisibility(View.INVISIBLE);
                     }
-
-                    final ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_item,poppedBalloonsNameArr);
-                    ((ArrayAdapter) adapter).setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            Object listItem = spinner.getItemAtPosition(position);
-                            Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
-                            undo(poppedBalloon);
-                            spinner.setVisibility(View.INVISIBLE);
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-                            spinner.setVisibility(View.INVISIBLE);
-                        }
-                    });
-                    //((ArrayAdapter) adapter).clear();
-                    /*for (int i = 0; i < popper.poppedBalloons.size(); i++) {
-                        Balloon balloon = popper.poppedBalloons.get(i);
-                        ((ArrayAdapter) adapter).add((Object) balloon.getIdea());
-                    }*/
-                    /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Object listItem = listView.getItemAtPosition(position);
-                            Balloon poppedBalloon = getBalloonByIdea(listItem.toString());
-                            undo(poppedBalloon);
-                            listView.setVisibility(View.INVISIBLE);
-                        }
-                    });
-                    listView.setAdapter(adapter);*/
-                    spinner.setAdapter(adapter);
-                    spinner.performClick();
                 }
                 return true;
             }
@@ -179,6 +162,14 @@ public class PopBalloonActivity extends AppCompatActivity {
         stateSaved = true;
         Intent intent = new Intent(this, FinalPlan.class);
         startActivity(intent);
+    }
+
+    public void goHome(View view) {
+        if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
+            startActivity(new Intent(PopBalloonActivity.this, Home.class));
+        } else {
+            startActivity(new Intent(PopBalloonActivity.this, UpdatedHomePage.class));
+        }
     }
 
     public Balloon getBalloonByIdea(String idea) {
