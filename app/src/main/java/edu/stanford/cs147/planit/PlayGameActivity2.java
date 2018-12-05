@@ -41,7 +41,6 @@ public class PlayGameActivity2 extends AppCompatActivity {
         final ArrayList<String> ideasList = new ArrayList<String>();
         final EditText textInput = findViewById(R.id.ideaInput);
 
-
         startTimer();
 
         textInput.setOnKeyListener(new View.OnKeyListener() {
@@ -359,6 +358,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         // SHOW YOU WON
                         showYouWonDialog();
                     }
+                    return true;
                 }
                 return false;
             }
