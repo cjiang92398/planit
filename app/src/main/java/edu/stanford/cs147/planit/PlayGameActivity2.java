@@ -278,7 +278,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((110 * displayMetrics.density)+0.5);
+                        int topTealBalloon = (int) ((90 * displayMetrics.density)+0.5);
                         int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
@@ -333,14 +333,14 @@ public class PlayGameActivity2 extends AppCompatActivity {
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int topTealBalloon = (int) ((70 * displayMetrics.density)+0.5);
                         int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
                         ImageView lavenderBalloon = (ImageView) findViewById(R.id.lavenderballoon);
                         ViewGroup.MarginLayoutParams marginParamsLavenderBalloon = (ViewGroup.MarginLayoutParams) lavenderBalloon.getLayoutParams();
-                        int topLavenderBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int topLavenderBalloon = (int) ((60 * displayMetrics.density)+0.5);
                         int leftLavenderBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsLavenderBalloon.setMargins(leftLavenderBalloon, topLavenderBalloon, 0, 0);
                         lavenderBalloon.requestLayout();
