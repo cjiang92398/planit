@@ -155,12 +155,13 @@ public class BalloonPoppingView extends LinearLayout {
         poppedBalloons.add(currBalloon);
         poppingState = true;
         invalidate();
+        MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.popping);
+        mp.setVolume(1500, 1500);
+        mp.start();
         new CountDownTimer(1000, 1000) {
             @Override
             public void onTick(long n) {
-                // still figuring out how to get this to work
-                /*MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.popping);
-                mp.start();*/
+                // blank
             }
             @Override
             public void onFinish() {
