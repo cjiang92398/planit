@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginLeft="165dp"
+        android:layout_marginLeft="175dp"
         android:src="@drawable/lavenderballoon"
         android:visibility="invisible"/>
 
