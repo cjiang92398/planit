@@ -192,7 +192,6 @@ public class UpdatedHomePage extends AppCompatActivity {
         final ImageView inballoonstagenotif2 = findViewById(R.id.inballoonstagenotif2);
         final ImageView inballoonstagenotif3 = findViewById(R.id.inballoonstagenotif3);
         final ImageView ingamestagenotif1 = findViewById(R.id.ingamestagenotif1);
-        final ImageButton destination1Button = findViewById(R.id.destination1);
         final ImageButton x1Button = findViewById(R.id.x1);
         final ImageButton x2Button = findViewById(R.id.x2);
         final ImageButton x3Button = findViewById(R.id.x3);
@@ -224,21 +223,49 @@ public class UpdatedHomePage extends AppCompatActivity {
             ingamestagenotif1.setVisibility(View.GONE);
         }
 
-        //make user-input destination clickable
-        if(ingamestagenotif1.getVisibility() == View.VISIBLE){
-            destination1Button.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v){
+        setClickForBalloonPopping();
+    }
+
+    private void setClickForBalloonPopping() {
+        final ImageButton destination1Button = findViewById(R.id.destination1);
+        final ImageButton destination2Button = findViewById(R.id.destination2);
+        final ImageView inballoonstagenotif1 = findViewById(R.id.inballoonstagenotif1);
+        final ImageView inballoonstagenotif2 = findViewById(R.id.inballoonstagenotif2);
+        final TextView destination1TextView = findViewById(R.id.destination1Text);
+        final TextView destination2TextView = findViewById(R.id.destination2Text);
+
+        destination2Button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if (inballoonstagenotif2.getVisibility() == View.VISIBLE) {
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
                     startActivity(intent);
                 }
-            });
-            destination1TextView.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v){
+            }
+        });
+        destination2TextView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if (inballoonstagenotif2.getVisibility() == View.VISIBLE) {
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
                     startActivity(intent);
                 }
-            });
-        }
+            }
+        });
+        destination1Button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if (inballoonstagenotif1.getVisibility() == View.VISIBLE) {
+                    Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+        destination1TextView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                if (inballoonstagenotif1.getVisibility() == View.VISIBLE) {
+                    Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     /*
