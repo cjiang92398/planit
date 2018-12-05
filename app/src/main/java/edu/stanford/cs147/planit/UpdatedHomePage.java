@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class UpdatedHomePage extends AppCompatActivity {
 
+    public boolean filtered = false;
     public static boolean updatedHomeStarted = false;          //if user has set destination
     public static String newDestination = "";          //user input destination
     public static ArrayList<String> destinationsList;          //list of destinations on home page
@@ -20,6 +21,13 @@ public class UpdatedHomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updated_home_page);
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            filtered = extras.getBoolean("filtered");
+        }
+
 
         //user has set destination
         updatedHomeStarted = true;
@@ -224,6 +232,14 @@ public class UpdatedHomePage extends AppCompatActivity {
         }
 
         setClickForBalloonPopping();
+
+        if (filtered) {
+            if(destination1TextView.getText().toString().equals(newDestination)) {
+                inballoonstagenotif2.setVisibility(View.GONE);
+            } else {
+                inballoonstagenotif1.setVisibility(View.GONE);
+            }
+        }
     }
 
     private void setClickForBalloonPopping() {

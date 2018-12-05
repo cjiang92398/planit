@@ -73,7 +73,11 @@ public class FinalPlan extends AppCompatActivity {
         if (Boolean.toString(UpdatedHomePage.updatedHomeStarted).equals("false")) {
             startActivity(new Intent(FinalPlan.this, Home.class));
         } else {
-            startActivity(new Intent(FinalPlan.this, UpdatedHomePage.class));
+            Intent intent = new Intent(this, UpdatedHomePage.class);
+            Bundle extras = new Bundle();
+            extras.putBoolean("filtered", true);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     }
 
