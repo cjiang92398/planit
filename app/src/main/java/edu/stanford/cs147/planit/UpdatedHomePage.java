@@ -254,6 +254,7 @@ public class UpdatedHomePage extends AppCompatActivity {
         destination2Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if (inballoonstagenotif2.getVisibility() == View.VISIBLE) {
+                    saveHomepageState(destination1TextView, destination2TextView, destination3TextView);
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
                     startActivity(intent);
                 }
@@ -262,6 +263,7 @@ public class UpdatedHomePage extends AppCompatActivity {
         destination2TextView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if (inballoonstagenotif2.getVisibility() == View.VISIBLE) {
+                    saveHomepageState(destination1TextView, destination2TextView, destination3TextView);
                     Intent intent = new Intent(getApplicationContext(), PopBalloonActivity.class);
                     startActivity(intent);
                 }
