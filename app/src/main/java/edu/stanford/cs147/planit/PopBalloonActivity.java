@@ -1,17 +1,23 @@
 package edu.stanford.cs147.planit;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +28,7 @@ public class PopBalloonActivity extends AppCompatActivity {
     private BalloonPoppingView popper;
     private static boolean stateSaved = false;
     private int numLongPress = 0;
+    private AlertDialog dialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +151,20 @@ public class PopBalloonActivity extends AppCompatActivity {
     }
 
     public void done(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = ((Activity) this).getLayoutInflater();
+        View layout = inflater.inflate(R.layout.confirmation, null);
+        builder.setView(layout);
+        dialog = builder.show();
+        dialog.getWindow().setLayout(1200, 962);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
+
+    public void cancel(View view) {
+        dialog.dismiss();
+    }
+
+    public void yes(View view) {
         BalloonPoppingView.savedBalloons.clear();
 
         for(int i = 0; i < popper.balloons.size(); i++){
