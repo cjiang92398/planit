@@ -41,7 +41,6 @@ public class PlayGameActivity2 extends AppCompatActivity {
         final ArrayList<String> ideasList = new ArrayList<String>();
         final EditText textInput = findViewById(R.id.ideaInput);
 
-
         startTimer();
 
         textInput.setOnKeyListener(new View.OnKeyListener() {
@@ -64,7 +63,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
                         int topCoral = (int) ((160 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
@@ -72,7 +71,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
                         int topPurpleBalloon = (int) ((80 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
@@ -106,7 +105,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
                         int topCoral = (int) ((140 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);;
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);;
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
@@ -114,14 +113,14 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
                         int topPurpleBalloon = (int) ((60 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
                         int topTealBalloon = (int) ((80 * displayMetrics.density)+0.5);
-                        int leftTealBalloon = (int) ((130 * displayMetrics.density) + 0.5);
+                        int leftTealBalloon = (int) ((135 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
@@ -161,7 +160,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView coral = (ImageView) findViewById(R.id.coralpenguin);
                         ViewGroup.MarginLayoutParams marginParamsCoral = (ViewGroup.MarginLayoutParams) coral.getLayoutParams();
                         int topCoral = (int) ((120 * displayMetrics.density)+0.5);
-                        int leftCoral = (int) ((150 * displayMetrics.density) + 0.5);;
+                        int leftCoral = (int) ((165 * displayMetrics.density) + 0.5);;
                         marginParamsCoral.setMargins(
                                 leftCoral, topCoral,0, 0);
                         coral.requestLayout();
@@ -169,14 +168,14 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
                         int topPurpleBalloon = (int) ((40 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((160 * displayMetrics.density) + 0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
                         int topTealBalloon = (int) ((60 * displayMetrics.density)+0.5);
-                        int leftTealBalloon = (int) ((130 * displayMetrics.density) + 0.5);
+                        int leftTealBalloon = (int) ((135 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
@@ -230,7 +229,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         ImageView purpleBalloon = (ImageView) findViewById(R.id.purpleballoon);
                         ViewGroup.MarginLayoutParams marginParamsPurpleBalloon = (ViewGroup.MarginLayoutParams) purpleBalloon.getLayoutParams();
                         int topPurpleBalloon = (int) ((110 * displayMetrics.density)+0.5);
-                        int leftPurpleBalloon = (int) ((165 * displayMetrics.density) + 0.5);
+                        int leftPurpleBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsPurpleBalloon.setMargins(leftPurpleBalloon, topPurpleBalloon, 0, 0);
                         purpleBalloon.requestLayout();
 
@@ -278,7 +277,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((110 * displayMetrics.density)+0.5);
+                        int topTealBalloon = (int) ((90 * displayMetrics.density)+0.5);
                         int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
@@ -333,14 +332,14 @@ public class PlayGameActivity2 extends AppCompatActivity {
 
                         ImageView tealBalloon = (ImageView) findViewById(R.id.tealballoon);
                         ViewGroup.MarginLayoutParams marginParamsTealBalloon = (ViewGroup.MarginLayoutParams) tealBalloon.getLayoutParams();
-                        int topTealBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int topTealBalloon = (int) ((70 * displayMetrics.density)+0.5);
                         int leftTealBalloon = (int) ((145 * displayMetrics.density) + 0.5);
                         marginParamsTealBalloon.setMargins(leftTealBalloon, topTealBalloon, 0, 0);
                         tealBalloon.requestLayout();
 
                         ImageView lavenderBalloon = (ImageView) findViewById(R.id.lavenderballoon);
                         ViewGroup.MarginLayoutParams marginParamsLavenderBalloon = (ViewGroup.MarginLayoutParams) lavenderBalloon.getLayoutParams();
-                        int topLavenderBalloon = (int) ((90 * displayMetrics.density)+0.5);
+                        int topLavenderBalloon = (int) ((60 * displayMetrics.density)+0.5);
                         int leftLavenderBalloon = (int) ((175 * displayMetrics.density) + 0.5);
                         marginParamsLavenderBalloon.setMargins(leftLavenderBalloon, topLavenderBalloon, 0, 0);
                         lavenderBalloon.requestLayout();
@@ -359,6 +358,7 @@ public class PlayGameActivity2 extends AppCompatActivity {
                         // SHOW YOU WON
                         showYouWonDialog();
                     }
+                    return true;
                 }
                 return false;
             }
