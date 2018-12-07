@@ -164,10 +164,10 @@ public class Home extends AppCompatActivity {
         inballoonstagenotif2.setVisibility(View.GONE);
 
         //add ellipses where appropriate
-        if(destination1TextView.getText().toString().equals("Paris")){
+        if(destination1TextView.getText().toString().equals("San Francisco")){
             inballoonstagenotif1.setVisibility(View.VISIBLE);
         }
-        if(destination2TextView.getText().toString().equals("Paris")){
+        if(destination2TextView.getText().toString().equals("San Francisco")){
             inballoonstagenotif2.setVisibility(View.VISIBLE);
         }
 

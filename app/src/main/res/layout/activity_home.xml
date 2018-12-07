@@ -109,7 +109,7 @@
         android:layout_height="137dp"
         android:layout_toRightOf="@id/destinationRightColumnHorizontalMargin"
         android:layout_width="137dp"
-        android:text="Paris"
+        android:text="San Francisco"
         android:textColor="#7C7C7C"
         android:textSize="30sp"
         android:textStyle="bold"

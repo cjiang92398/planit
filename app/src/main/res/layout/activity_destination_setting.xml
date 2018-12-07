@@ -86,7 +86,7 @@
         android:id="@+id/destination"
         android:background="@null"
         android:fontFamily="@font/sniglet"
-        android:hint="e.g. San Francisco"
+        android:hint="e.g. Paris"
         android:inputType="text"
         android:layout_below="@id/destinationVerticalMargin"
         android:layout_height="wrap_content"

@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
 
                     //start app with 2 pre-added locations
-                    Home.destinationsList.add("Paris");
+                    Home.destinationsList.add("San Francisco");
                     Home.destinationsList.add("Tokyo");
 
                     //transport user to home page
